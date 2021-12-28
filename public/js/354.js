@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[354],{5354:(n,e,l)=>{l.r(e),l.d(e,{default:()=>t});const s={name:"dashboard"};const t=(0,l(1900).Z)(s,(function(){var n=this,e=n.$createElement;return(n._self._c||e)("div",[n._v("\n        Coming Soon\n")])}),[],!1,null,null,null).exports}}]);
+//# sourceMappingURL=354.js.map
