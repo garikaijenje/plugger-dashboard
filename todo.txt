@@ -26,6 +26,7 @@ Artist  extends User
  - n_phone
  - n_email
  - status
+ - completed profile
 
 Images , Documents
 
@@ -65,10 +66,18 @@ Subscriptions
  - expires_at
  - type
 
+ Album
+  - Artist
+  - name
+  - artist_id
+  - genre_id
+  - Description
+  - cover
+
 
 Language
 Province
 Genre
-Album
+
 System Configuration
 Notifications - Laravel Notifications

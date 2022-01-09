@@ -63,6 +63,14 @@
                                     <span>{{ user.email }}</span>
                                 </p>
                                 <p>
+                                    <strong class="mr-2"> Phone :</strong>
+                                    <span>{{ user.phone }}</span>
+                                </p>
+                                <p>
+                                    <strong class="mr-2"> Type :</strong>
+                                    <span>{{ user.type }}</span>
+                                </p>
+                                <p>
                                     <strong class="mr-2">Created :</strong>
                                     <span>{{ user.created_at }}</span>
                                 </p>

@@ -25,6 +25,8 @@ class UserController extends Controller
         $request->validate([
            'name' => ['required'],
            'last_name' => ['required'],
+            'phone' => [ 'required' , 'starts_with:263' , 'digits:12'],
+           'type' => ['required'],
            'email' => ['required' , 'email' , 'unique:users'],
            'password' => ['required'],
         ]);
@@ -33,7 +35,10 @@ class UserController extends Controller
         $model = User::query()->create([
            'name' => $request->get('name'),
            'last_name' => $request->get('last_name'),
+           'phone' => $request->get('phone'),
+           'type' => $request->get('type'),
            'email' => $request->get('email'),
+           'status' => true,
            'password' => Hash::make($request->get('password')),
         ]);
 
@@ -48,12 +53,16 @@ class UserController extends Controller
         $request->validate([
             'name' => ['required'],
             'last_name' => ['required'],
+            'phone' => [ 'required' , 'starts_with:263' , 'digits:12'],
+            'type' => ['required'],
             'email' => ['required' , 'email' , 'unique:users,email,'.$model->id],
         ]);
 
         $model->update([
             'name' => $request->get('name'),
             'email' => $request->get('email'),
+            'phone' => $request->get('phone'),
+            'type' => $request->get('type'),
         ]);
 
         $model->syncRoles($request->get('roles'));

@@ -13,7 +13,9 @@
                     name : '',
                     last_name : '',
                     email : '',
+                    phone : '',
                     password : '',
+                    type : '',
                     roles : [],
                     permissions : [],
                 }, {
@@ -80,6 +82,28 @@
                                     <div class="col-lg-9">
                                         <input type="email" name="email" v-model="form.email" :class="[ 'form-control mw-400' , form.errors.get('email') ? 'is-invalid' : '' ]" placeholder="Email">
                                         <div v-text="form.errors.get('email')" class="invalid-feedback"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-3 align-items-center">
+                                    <label class="col-lg-3 col-form-label">Email</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" name="phone" v-model="form.phone" :class="[ 'form-control mw-400' , form.errors.get('phone') ? 'is-invalid' : '' ]" placeholder="Phone">
+                                        <div v-text="form.errors.get('phone')" class="invalid-feedback"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-3 align-items-center">
+                                    <label class="col-lg-3 col-form-label">Type</label>
+                                    <div class="col-lg-9">
+                                        <select type="text" name="type" v-model="form.type" :class="[ 'form-control mw-400' , form.errors.get('type') ? 'is-invalid' : '' ]">
+                                            <option value="">Choose Type</option>
+                                            <option value="artist">artist</option>
+                                            <option value="zimura">zimura</option>
+                                            <option value="radio">radio</option>
+                                            <option value="tv">tv</option>
+                                            <option value="admin">admin</option>
+                                            <option value="individual">individual</option>
+                                        </select>
+                                        <div v-text="form.errors.get('type')" class="invalid-feedback"/>
                                     </div>
                                 </div>
                                 <div v-if="!edit" class="form-group row mb-3 align-items-center">

@@ -395,7 +395,7 @@ Loader
   height: 500px;
 }
 
-input[type=file] {
+.drag-container {
   opacity: 0;
   width: 100%;
   min-height: 200px;
@@ -407,6 +407,18 @@ input[type=file] {
 .filezone {
   outline: 3px dashed grey;
   background: #fff;
+  color: dimgray;
+  min-height: 200px;
+  max-height: 200px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.imagezone {
+  outline: 1px dashed grey;
   color: dimgray;
   min-height: 200px;
   max-height: 200px;
@@ -653,4 +665,12 @@ div.remove-container a {
 .alert-plugger {
   background-color: #6200EE;
   border-color: #6200EE;
+}
+
+.p-border-light {
+  border: 1px solid #222227;
+}
+
+.p-hover-primary:hover {
+  border: 1px solid #6200EE !important;
 }

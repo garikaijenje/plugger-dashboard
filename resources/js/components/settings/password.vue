@@ -32,7 +32,7 @@
                     confirmButtonText: `Yes, Update!`
                 }).then((result) => {
                     if (result.value) {
-                        this.form.submit('/password').then((response) => {
+                        this.form.submit('/admin/password').then((response) => {
                             window.alerts.success(response);
                             this.form.reset();
                         }).catch((error) => {

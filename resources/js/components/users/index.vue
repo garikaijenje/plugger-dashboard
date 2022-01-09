@@ -22,6 +22,8 @@
             <th>Name</th>
             <th>Last Name</th>
             <th>Email</th>
+            <th>Phone</th>
+            <th>Type</th>
             <th>Date</th>
             <th class="text-center"></th>
         </template>
@@ -39,6 +41,8 @@
             <td>{{ data.row.name }}</td>
             <td>{{ data.row.last_name }}</td>
             <td>{{ data.row.email }}</td>
+            <td>{{ data.row.phone }}</td>
+            <td>{{ data.row.type }}</td>
             <td>{{ data.row.created_at }}</td>
             <td>
                 <router-link :to="`/admin/users/${data.row.id}/view`" class="action-icon text-primary">

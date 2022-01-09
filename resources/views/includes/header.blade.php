@@ -8,9 +8,11 @@
         </div>
             <nav class="header__nav">
                 @if (auth()->check())
-
-                    <router-link to="/profile"> <i class="mdi mdi-user"></i> Profile</router-link>
+                    <router-link to="/profile"> <i class="mdi mdi-account mdi-18px"></i> Profile</router-link>
+                    <router-link to="/upload"> <i class="mdi mdi-cloud-upload mdi-18px"></i> Upload Music</router-link>
+                    <a href="/admin" target="_blank"> <i class="mdi mdi-monitor-dashboard mdi-18px"></i> Admin</a>
                 @endif
+
             </nav>
         <form action="#" class="header__search">
             <input type="text" placeholder="Artist, track or podcast">
@@ -32,8 +34,8 @@
 
                 <div class="header__action header__action--signin">
                     <a @click.prevent="logout" class="header__action-btn" href="#">
-                        <span>{{ auth()->user()->name  }} {{ auth()->user()->last_name  }}</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.81,12.28a3.73,3.73,0,0,0,1-2.5,3.78,3.78,0,0,0-7.56,0,3.73,3.73,0,0,0,1,2.5A5.94,5.94,0,0,0,6,16.89a1,1,0,0,0,2,.22,4,4,0,0,1,7.94,0A1,1,0,0,0,17,18h.11a1,1,0,0,0,.88-1.1A5.94,5.94,0,0,0,14.81,12.28ZM12,11.56a1.78,1.78,0,1,1,1.78-1.78A1.78,1.78,0,0,1,12,11.56ZM19,2H5A3,3,0,0,0,2,5V19a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V5A3,3,0,0,0,19,2Zm1,17a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V5A1,1,0,0,1,5,4H19a1,1,0,0,1,1,1Z"/></svg>
+                        <span>{{ auth()->user()->name  }} {{ auth()->user()->last_name  }} |  Sign out</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,12a1,1,0,0,0,1,1h7.59l-2.3,2.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0l4-4a1,1,0,0,0,.21-.33,1,1,0,0,0,0-.76,1,1,0,0,0-.21-.33l-4-4a1,1,0,1,0-1.42,1.42L12.59,11H5A1,1,0,0,0,4,12ZM17,2H7A3,3,0,0,0,4,5V8A1,1,0,0,0,6,8V5A1,1,0,0,1,7,4H17a1,1,0,0,1,1,1V19a1,1,0,0,1-1,1H7a1,1,0,0,1-1-1V16a1,1,0,0,0-2,0v3a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V5A3,3,0,0,0,17,2Z"></path></svg>
                     </a>
                 </div>
 

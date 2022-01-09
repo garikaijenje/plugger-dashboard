@@ -24,7 +24,7 @@ use Spinen\QuickBooks\HasQuickBooksToken;
  */
 class User extends Authenticatable implements \OwenIt\Auditing\Contracts\Auditable
 {
-    use Notifiable , HasModelFilter , HasRoles , Auditable ,  Notifiable , HasQuickBooksToken;
+    use Notifiable , HasModelFilter , HasRoles , Auditable ,  Notifiable;
 
     protected $appends = [
         'select_name','avatar_name'

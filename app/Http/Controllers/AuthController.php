@@ -166,6 +166,7 @@ class AuthController extends Controller
             'last_name' => $request->get('last_name'),
             'email' => $request->get('email'),
             'phone' => $request->get('phone'),
+            'status' =>  true,
             'password' => Hash::make($request->get('password')),
         ]);
 

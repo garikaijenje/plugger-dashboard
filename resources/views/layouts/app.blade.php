@@ -9,6 +9,11 @@
     <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="{{ asset('images/plugger_logo_1_white_Bmr_icon.ico') }}" sizes="32x32">
+    <link rel="apple-touch-icon" href="{{ asset('images/plugger_logo_1_white_Bmr_icon.ico') }}">
+
 </head>
 
 <body data-layout="detached" class="loading">
@@ -17,17 +22,17 @@
         <div class="container-fluid">
             <a href="/" class="topnav-logo">
             <span class="topnav-logo-lg">
-                <img src="{{ asset('image/logo.svg') }}" alt="" height="43">
+                <img src="{{ asset('images/plugger-logo-1-white.png') }}" alt="" height="43">
             </span>
                 <span class="topnav-logo-sm">
-                <img src="{{ asset('image/logo.svg') }}" alt="" height="43">
+                <img src="{{ asset('images/plugger-logo-1-white.png') }}" alt="" height="43">
             </span>
             </a>
             <ul class="list-unstyled topbar-right-menu float-right mb-0">
                 <li class="dropdown notification-list">
                 <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                         <span class="account-user-avatar border border-primary rounded-circle">
-                            <img src="{{ asset('image/hiclipart.com.png') }}" alt="user-image" class="rounded-circle">
+                            <img src="{{ asset('images/hiclipart.com.png') }}" alt="user-image" class="rounded-circle">
                         </span>
                         <span>
                             <span class="account-user-name">{{ \Illuminate\Support\Str::limit(auth()->user()->name .' '. auth()->user()->last_name, 20 , '...')  }}</span>
@@ -35,7 +40,7 @@
                         </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
-                        <router-link to="/settings" class="dropdown-item notify-item">
+                        <router-link to="/admin/settings" class="dropdown-item notify-item">
                             <i class="mdi mdi-account-edit mr-1"></i>
                             <span>Settings</span>
                         </router-link>
@@ -70,44 +75,6 @@
                         <i class="uil-chart-line"></i>
                         <span> Dashboard </span>
                     </router-link>
-                    <router-link to="/admin/transactions" class="side-nav-link"  active-class="text-primary">
-                        <i class="uil-align-left"></i>
-                        <span> Transactions </span>
-                    </router-link>
-
-                    <li class="side-nav-title side-nav-item mt-2">Bills</li>
-
-                    <router-link to="/admin/zesa" class="side-nav-link"  active-class="text-primary">
-                        <i class="uil-bolt"></i>
-                        <span> Zesa </span>
-                    </router-link>
-                    <router-link to="/admin/airtime" class="side-nav-link"  active-class="text-primary">
-                        <i class="uil-phone"></i>
-                        <span> Airtime </span>
-                    </router-link>
-                    <router-link to="/admin/bundle" class="side-nav-link"  active-class="text-primary">
-                        <i class="uil-globe"></i>
-                        <span> Bundles </span>
-                    </router-link>
-
-                    <li class="side-nav-title side-nav-item mt-2">Payments</li>
-
-                    <router-link to="/admin/ecocash" class="side-nav-link"  active-class="text-primary">
-                        <i class="uil-money-bill"></i>
-                        <span> Ecocash </span>
-                    </router-link>
-                    <router-link to="/admin/stripe" class="side-nav-link"  active-class="text-primary">
-                        <i class="uil-card-atm"></i>
-                        <span> Stripe </span>
-                    </router-link>
-                    <router-link to="/admin/manual" class="side-nav-link"  active-class="text-primary">
-                        <i class="uil-money-insert"></i>
-                        <span> Manual </span>
-                    </router-link>
-                    <router-link to="/admin/wallet" class="side-nav-link"  active-class="text-primary">
-                        <i class="uil-user-square"></i>
-                        <span> Wallet </span>
-                    </router-link>
 
                     <li class="side-nav-title side-nav-item mt-2">System</li>
                     <router-link to="/admin/configuration" class="side-nav-link"  active-class="text-primary">
@@ -115,16 +82,9 @@
                         <span> Configuration </span>
                     </router-link>
                     <li class="side-nav-title side-nav-item mt-2">Manage</li>
-                    <router-link to="/admin/agents" class="side-nav-link"  active-class="text-primary">
-                        <i class="uil-user-square"></i>
-                        <span> Agents </span>
-                    </router-link><router-link to="/admin/users" class="side-nav-link"  active-class="text-primary">
+                    <router-link to="/admin/users" class="side-nav-link"  active-class="text-primary">
                         <i class="uil-user"></i>
                         <span> Users </span>
-                    </router-link>
-                    <router-link to="/admin/roles" class="side-nav-link"  active-class="text-primary">
-                        <i class="uil-user-exclamation"></i>
-                        <span> Roles </span>
                     </router-link>
 
                     <a href="/horizon" target="_blank" class="side-nav-link">

@@ -36,6 +36,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'Root',
             'last_name' => 'System',
             'email' => 'root@system',
+            'phone' => '263771222081',
+            'type' => 'admin',
             'password' => Hash::make('password')
         ]);
 

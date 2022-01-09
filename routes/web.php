@@ -46,9 +46,6 @@ Route::post('/reset' , [AuthController::class , 'resetPassword']);
 Route::prefix('admin')->group(function (){
     
 
-
-
-
     Route::middleware('auth')->group(function (){
 
         Route::post('/password' , [AuthController::class , 'password']);
@@ -65,12 +62,12 @@ Route::prefix('admin')->group(function (){
              */
 
             Route::prefix('users')->group(function (){
-                Route::get('/' ,  [UserController::class , 'index'])->middleware('can:admin,'. User::class);
-                Route::post('/create' ,  [UserController::class , 'store'])->middleware('can:admin,'. User::class);
-                Route::get('/{model}/view' ,  [UserController::class , 'view'])->middleware('can:admin,'. User::class);
-                Route::get('/{model}/activate' ,  [UserController::class , 'activate'])->middleware('can:admin,'. User::class);
-                Route::get('/{model}/deactivate' ,  [UserController::class , 'deactivate'])->middleware('can:admin,'. User::class);
-                Route::post('/{model}/update' ,  [UserController::class , 'update'])->middleware('can:admin,'. User::class);
+                Route::get('/' ,  [UserController::class , 'index']);
+                Route::post('/create' ,  [UserController::class , 'store']);
+                Route::get('/{model}/view' ,  [UserController::class , 'view']);
+                Route::get('/{model}/activate' ,  [UserController::class , 'activate']);
+                Route::get('/{model}/deactivate' ,  [UserController::class , 'deactivate']);
+                Route::post('/{model}/update' ,  [UserController::class , 'update']);
             });
 
             Route::prefix('roles')->group(function (){

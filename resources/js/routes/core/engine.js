@@ -13,7 +13,7 @@ routes = routes.concat(admin);
 
 const router = new VueRouter({
     routes :  routes,
-    mode: 'history',
+    // mode: 'history',
 });
 
 router.beforeEach((to, from, next) => {
