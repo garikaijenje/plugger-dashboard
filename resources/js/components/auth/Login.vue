@@ -1,30 +1,44 @@
 <template>
-    <div class="">
-        <form @submit.prevent="runForm" autocomplete="off" class="card-body px-4">
-            <div class="text-center w-75 m-auto">
-                <h4 class="text-dark-50 text-center mt-0 font-weight-bold">Sign In</h4>
-                <p class="text-muted mb-3">Enter your email address and password to login</p>
-            </div>
-            <p v-if="message" :class="['alert text-center mb-0 rounded-0 mb-3 px-3' , error ? 'alert-danger' : 'alert-success']">
-                {{ message }}
-            </p>
-            <div>
-                <div class="form-group">
-                    <label>Email address</label>
-                    <input type="text" v-model="form.email" :class="[ 'form-control' , form.errors.get('email') ? 'is-invalid' : '' ]" placeholder="Enter your email" autocomplete="unique-1">
-                    <div v-text="form.errors.get('email')" class="invalid-feedback"/>
+
+    <div class="sign">
+        <div class="sign__content">
+            <!-- authorization form -->
+            <form @submit.prevent="runForm" class="sign__form">
+                <a href="/" class="sign__logo">
+                    <img src="/images/plugger-logo-1-white.png" alt="">
+                </a>
+
+                <p v-if="message" class="alert text-white alert-plugger small rounded-0 w-100 text-center">
+                    {{ message }}
+                </p>
+
+                <div class="sign__group">
+                    <label class="text-white small">Email address</label>
+                    <input type="text" v-model="form.email" name="email" :class="[ 'sign__input' , form.errors.get('email') ? 'is-invalid' : '' ]" placeholder="Enter your email" autocomplete="unique-1">
+                    <div v-text="form.errors.get('email')" class="main__table-text--red small"/>
                 </div>
-                <div class="form-group mb-3">
-                    <a href="/password/reset" class="text-primary float-right"><small>Forgot your password?</small></a>
-                    <label>Password</label>
-                    <input type="password" v-model="form.password" :class="[ 'form-control' , form.errors.get('password') ? 'is-invalid' : '' ]"  placeholder="Enter your password" autocomplete="unique-2">
-                    <div v-text="form.errors.get('password')" class="invalid-feedback"/>
+
+                <div class="sign__group">
+                    <label class="text-white small">Password</label>
+                    <input type="password" v-model="form.password" name="password" :class="[ 'sign__input' , form.errors.get('password') ? 'is-invalid' : '' ]"  placeholder="Enter your password" autocomplete="unique-2">
+                    <div v-text="form.errors.get('password')" class="main__table-text--red small"/>
                 </div>
-                <div class="form-group mb-0 text-center">
-                    <button @click.prevent="loginUser" :class="['btn btn-primary px-4' , form.loading || loading ? 'btn-loading' : '']" type="submit">Login</button>
+
+                <div v-if="otp" class="sign__group">
+                    <label class="text-white small">OTP</label>
+                    <input type="password" v-model="form.otp" name="otp" :class="[ 'sign__input' , form.errors.get('otp') ? 'is-invalid' : '' ]"  placeholder="Enter your OTP" autocomplete="unique-2">
+                    <div v-text="form.errors.get('otp')" class="main__table-text--red small"/>
                 </div>
-            </div>
-        </form>
+
+                <button  @click.prevent="runForm" :class="['sign__btn' , form.loading || loading ? 'btn-loading' : '']" type="button">Sign in</button>
+
+                <span class="sign__delimiter">or</span>
+
+                <span class="sign__text">Don't have an account? <a href="/register">Register!</a></span>
+
+                <span class="sign__text"><a href="/reset">Forgot password?</a></span>
+            </form>
+        </div>
     </div>
 </template>
 
@@ -38,29 +52,73 @@
             return {
                 loading : false,
                 error : false,
+                otp : false,
+                otpLeg : false,
                 message : '',
                 form : new Form({
                    email : '',
                    password  :'',
+                    otp  :'',
                 })
             };
         },
         methods : {
             runForm()
             {
-                this.loginUser();
+                if (!this.otpLeg)
+                {
+                    this.loginUser();
+                }  else {
+                    this.loginOTPUser();
+                }
             },
             loginUser()
             {
                 this.loading = true;
                 this.error = false;
                 this.message = "";
-                this.form.submit('/admin/login').then((response) => {
-                    if (response.data.success === true ){
+                this.form.submit('/login').then((response) => {
+
+                    if (response.data.success === true )
+                    {
+                        this.message = response.data.message;
+                        this.otp = response.data.body.otp;
+                        this.otpLeg = response.data.body.otp;
+
+                        if (!this.otpLeg)
+                        {
+                            setTimeout(function () {
+                                window.location = `${window.location.origin}/`;
+                            } , 2000 );
+                        } else {
+                            this.loading = false;
+                        }
+
+
+
+                    } else {
+                        this.message = response.data.message;
+                        this.loading = false;
+                        this.error = true;
+                    }
+                }).catch((error) => {
+                    this.loading = false;
+                });
+            },
+            loginOTPUser()
+            {
+                this.loading = true;
+                this.error = false;
+                this.message = "";
+                this.form.submit('/login/otp').then((response) => {
+
+                    if (response.data.success === true )
+                    {
                         this.message = response.data.message;
                         setTimeout(function () {
-                            window.location = `${window.location.origin}/admin`;
+                            window.location = `${window.location.origin}/`;
                         } , 2000 );
+
                     } else {
                         this.message = response.data.message;
                         this.loading = false;

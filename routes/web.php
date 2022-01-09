@@ -23,22 +23,31 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::fallback([HomeController::class , 'welcome']);
+//Route::fallback([HomeController::class , 'welcome']);
 Route::get('/', [HomeController::class , 'welcome']);
+
+
+Route::middleware('guest')->group(function (){
+    Route::get('/login' , [ AuthController::class , 'loginView' ])->name('login');
+    Route::get('/register' , [ AuthController::class , 'registerView' ])->name('register');
+    Route::post('/login' , [ AuthController::class , 'login']);
+    Route::post('/login/otp' , [ AuthController::class , 'loginOTP']);
+    Route::post('/register' , [ AuthController::class , 'register']);
+});
+
+Route::post('/logout' , [AuthController::class , 'logout'])->name('logout');
+Route::get('/password/reset' , [AuthController::class , 'getResetForm']);
+Route::post('/password/reset' , [AuthController::class , 'reset']);
+Route::post('/reset' , [AuthController::class , 'resetPassword']);
 
 
 // Admin Site
 
 Route::prefix('admin')->group(function (){
     
-    Route::middleware('guest')->group(function (){
-        Route::get('/login' , [ AuthController::class , 'loginView' ])->name('login');
-        Route::post('/login' , [ AuthController::class , 'login']);
-    });
-    Route::post('/logout' , [AuthController::class , 'logout'])->name('logout');
-    Route::get('/password/reset' , [AuthController::class , 'getResetForm']);
-    Route::post('/password/reset' , [AuthController::class , 'reset']);
-    Route::post('/reset' , [AuthController::class , 'resetPassword']);
+
+
+
 
     Route::middleware('auth')->group(function (){
 

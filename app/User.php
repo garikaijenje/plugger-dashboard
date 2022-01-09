@@ -17,6 +17,10 @@ use Spinen\QuickBooks\HasQuickBooksToken;
  * @property mixed email
  * @property mixed select_name
  * @property mixed password
+ * @property mixed require_otp
+ * @property mixed phone
+ * @property mixed otp
+ * @property mixed otp_expiry
  */
 class User extends Authenticatable implements \OwenIt\Auditing\Contracts\Auditable
 {
@@ -42,7 +46,7 @@ class User extends Authenticatable implements \OwenIt\Auditing\Contracts\Auditab
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','last_name' ,'status' , 'password_reset_token' , 'password_reset_token_expiry'
+        'name', 'email', 'password','last_name' ,'status' , 'password_reset_token' , 'password_reset_token_expiry' , 'phone' , 'require_otp' , 'otp' , 'otp_expiry'
     ];
 
     /**
