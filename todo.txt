@@ -24,7 +24,8 @@ Artist  extends User
  - tiktok
  - n_name
  - n_phone
- _ n_email
+ - n_email
+ - status
 
 Images , Documents
 

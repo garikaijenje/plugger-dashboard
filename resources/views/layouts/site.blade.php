@@ -10,9 +10,7 @@
     @endif
 
     <link rel="stylesheet" href="{{ asset('bootstrap-4.1.3-dist/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('site/css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('site/css/magnific-popup.css') }}">
-    <link rel="stylesheet" href="{{ asset('site/css/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/icons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('site/css/paymentfont.min.css') }}">
     <link rel="stylesheet" href="{{ asset('site/css/slider-radio.css') }}">
     <link rel="stylesheet" href="{{ asset('site/css/plyr.css') }}">

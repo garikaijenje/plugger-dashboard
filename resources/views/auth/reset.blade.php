@@ -1,4 +1,6 @@
-@extends('layouts.auth')
+@extends('layouts.site')
 @section('content')
-    <reset></reset>
+    <div class="col-12">
+        <reset></reset>
+    </div>
 @endsection

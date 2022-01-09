@@ -36,7 +36,7 @@ Route::middleware('guest')->group(function (){
 });
 
 Route::post('/logout' , [AuthController::class , 'logout'])->name('logout');
-Route::get('/password/reset' , [AuthController::class , 'getResetForm']);
+Route::get('/reset' , [AuthController::class , 'getResetForm']);
 Route::post('/password/reset' , [AuthController::class , 'reset']);
 Route::post('/reset' , [AuthController::class , 'resetPassword']);
 

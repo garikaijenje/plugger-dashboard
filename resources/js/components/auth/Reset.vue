@@ -1,47 +1,53 @@
 <template>
-    <div class="">
-        <div class="card-body px-4">
-            <div class="text-center w-75 m-auto">
-                <h4 class="text-dark-50 text-center mt-0 font-weight-bold">Reset Password</h4>
-                <p class="text-muted mb-3">Enter your email address to receive your reset Token</p>
-            </div>
-            <p v-if="message" :class="['alert text-center mb-0 rounded-0 mb-3 px-3' , error ? 'alert-danger' : 'alert-success']">
-                {{ message }}
-            </p>
-            <div>
-                <div class="form-group">
-                    <label>Email address</label>
-                    <input type="text" v-model="form.email" :class="[ 'form-control' , form.errors.get('email') ? 'is-invalid' : '' ]" placeholder="Enter your email" autocomplete="off">
-                    <div v-text="form.errors.get('email')" class="invalid-feedback"/>
+    <div class="sign">
+        <div class="sign__content">
+            <!-- authorization form -->
+            <form @submit.prevent="runForm" class="sign__form">
+                <a href="/" class="sign__logo">
+                    <img src="/images/plugger-logo-1-white.png" alt="">
+                </a>
+
+                <p class="text-center text-white mb-3">Enter your email address to receive your reset Token</p>
+
+                <p v-if="message" class="alert text-white alert-plugger small rounded-0 w-100 text-center">
+                    {{ message }}
+                </p>
+
+                <div class="sign__group">
+                    <label class="text-white small">Email address</label>
+                    <input type="text" v-model="form.email" name="email" :class="[ 'sign__input' , form.errors.get('email') ? 'is-invalid' : '' ]" placeholder="Enter your email" autocomplete="unique-1">
+                    <div v-text="form.errors.get('email')" class="main__table-text--red small"/>
                 </div>
-                <div v-if="otpSent" class="form-group">
-                    <label>Token</label>
-                    <input type="text" v-model="form.token" :class="[ 'form-control' , form.errors.get('token') ? 'is-invalid' : '' ]" placeholder="Enter Token" autocomplete="off">
-                    <div v-text="form.errors.get('token')" class="invalid-feedback"/>
+
+                <div class="sign__group"  v-if="otpSent">
+                    <label class="text-white small">Token</label>
+                    <input type="text" v-model="form.token" name="email" :class="[ 'sign__input' , form.errors.get('token') ? 'is-invalid' : '' ]" placeholder="Enter Token" autocomplete="unique-1">
+                    <div v-text="form.errors.get('token')" class="main__table-text--red small"/>
                 </div>
-                <div v-if="otpSent" class="form-group">
-                    <label>Password</label>
-                    <input type="password" v-model="form.password" :class="[ 'form-control' , form.errors.get('password') ? 'is-invalid' : '' ]" placeholder="Enter Password" autocomplete="off">
-                    <div v-text="form.errors.get('password')" class="invalid-feedback"/>
-                    <div class="help-block text-right"><small> [ Must have at least one digit , capital , small letter and special character] </small></div>
+
+                <div class="sign__group" v-if="otpSent">
+                    <label class="text-white small">Password</label>
+                    <input type="password" v-model="form.password" :class="[ 'sign__input' , form.errors.get('password') ? 'is-invalid' : '' ]"  placeholder="Enter your password" autocomplete="unique-2">
+                    <div v-text="form.errors.get('password')" class="main__table-text--red small"/>
                 </div>
-                <div v-if="otpSent" class="form-group">
-                    <label>Confirm Password</label>
-                    <input type="password" v-model="form.password_confirmation" :class="[ 'form-control' , form.errors.get('password_confirmation') ? 'is-invalid' : '' ]" placeholder="Enter Password Confirm" autocomplete="off">
-                    <div v-text="form.errors.get('password_confirmation')" class="invalid-feedback"/>
+
+
+                <div class="sign__group" v-if="otpSent">
+                    <label class="text-white small">Confirm Password</label>
+                    <input type="password" v-model="form.password_confirmation" :class="[ 'sign__input' , form.errors.get('password_confirmation') ? 'is-invalid' : '' ]"  placeholder="Re-Enter your password" autocomplete="unique-2">
+                    <div v-text="form.errors.get('password')" class="main__table-text--red small"/>
                 </div>
-                <div v-if="!otpSent" class="form-group mb-0 text-center">
-                    <button @click="getOTP" :class="['btn btn-primary px-4' , form.loading || loading ? 'btn-loading' : '']" type="submit"> Get Token</button>
+
+                <button v-if="!otpSent"  @click.prevent="getOTP" :class="['sign__btn' , form.loading || loading ? 'btn-loading' : '']" type="button">Get Token</button>
+                <button v-if="otpSent"  @click.prevent="loginUser" :class="['sign__btn' , form.loading || loading ? 'btn-loading' : '']" type="button">Reset Password</button>
+
+                <div class="mt-2">
+                    <a @click.prevent="getOTP" href="#" class="text-primary"><small> Get new Reset Token ?</small></a>
                 </div>
-                <div v-if="otpSent" class="form-group mb-0 text-center">
-                    <button @click="loginUser" :class="['btn btn-primary px-4' , form.loading || loading ? 'btn-loading' : '']" type="submit">Reset Password</button>
-                    <div class="mt-2">
-                        <a @click.prevent="getOTP" href="#" class="text-primary"><small> Get new Reset Token ?</small></a>
-                    </div>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
+
 </template>
 
 <script>

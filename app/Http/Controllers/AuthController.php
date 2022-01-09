@@ -1,10 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Events\LoginSuccessEvent;
-use App\Jobs\SendEmailOTP;
-use App\Jobs\SendEmailResetToken;
-use App\Jobs\SendSMSOTP;
 use App\User;
 use Exception;
 use Illuminate\Http\JsonResponse;
@@ -208,14 +204,15 @@ class AuthController extends Controller
 
         if ($user)
         {
-                $reset = random_int(100000 , 999999);
+                $reset = config('app.env') == 'local' ? 123456 :  random_int(100000 , 999999);
                 $message = 'Your password reset Token Sent to ' . $this->obfuscate_email($user->email);
                 $user->update([
                     'password_reset_token' => Hash::make($reset),
                     'password_reset_token_expiry' => now()->addHour()
                 ]);
 
-                $this->dispatch(new SendEmailResetToken($user->email , $reset));
+//                $this->dispatch(new SendEmailResetToken($user->email , $reset));
+//                $this->dispatch(new SendEmailResetToken($user->email , $reset));
 
                 return api()->success(true)->build($message);
 
