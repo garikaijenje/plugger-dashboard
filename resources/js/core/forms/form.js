@@ -13,6 +13,7 @@ class Form {
         }
 
         this.errors = new Errors();
+        this.uploadPercentage =  0;
     }
 
     fill(field , value)
@@ -80,6 +81,45 @@ class Form {
         });
 
     }
+
+
+    upload(url)
+    {
+        this.loading = true;
+        this.errors.clear();
+        this.uploadPercentage =  0;
+        let formData = new FormData();
+
+        for ( let  field in this.original )
+        {
+            formData.append(field , this[field]);
+        }
+
+        return new Promise((resolve , reject) => {
+            window.axios['post'](`${window.location.origin}${url}` , formData , {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                },
+
+                onUploadProgress : function(progressEvent){
+                    this.uploadPercentage = parseInt(Math.round( ( progressEvent.loaded / progressEvent.total ) * 100));
+                }.bind(this)
+
+            }).then((e) => {
+                this.uploadPercentage =  0;
+                this.loading = false;
+                this.onSuccess(e);
+                resolve(e);
+            }).catch((e) => {
+                this.uploadPercentage =  0;
+                this.loading = false;
+                this.onFail(e);
+                reject(e);
+            });
+
+        });
+    }
+
 
     onSuccess(e)
     {

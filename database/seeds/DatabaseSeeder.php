@@ -1,4 +1,6 @@
 <?php
+
+use App\Genre;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
@@ -55,6 +57,23 @@ class DatabaseSeeder extends Seeder
         });
 
         $user->assignRole($admin);
+
+
+        $genres = [
+            'Rock',
+            'Hip pop',
+            'Pop',
+            'House'
+        ];
+
+        foreach ($genres as $genre)
+        {
+            echo 'Adding Genre : ' .  $genre . PHP_EOL;
+
+            Genre::query()->create([
+                'name' =>  $genre
+            ]);
+        }
 
     }
 }
