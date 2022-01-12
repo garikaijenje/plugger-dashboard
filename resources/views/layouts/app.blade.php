@@ -81,6 +81,18 @@
                         <i class="uil-cog"></i>
                         <span> Configuration </span>
                     </router-link>
+                    <router-link to="/admin/genre" class="side-nav-link"  active-class="text-primary">
+                        <i class="uil-hunting"></i>
+                        <span> Genre </span>
+                    </router-link>
+                    <router-link to="/admin/language" class="side-nav-link"  active-class="text-primary">
+                        <i class="uil-comment-alt-plus"></i>
+                        <span> Languages </span>
+                    </router-link>
+                    <router-link to="/admin/province" class="side-nav-link"  active-class="text-primary">
+                        <i class="uil-map-pin-alt"></i>
+                        <span> Province </span>
+                    </router-link>
                     <li class="side-nav-title side-nav-item mt-2">Manage</li>
                     <router-link to="/admin/users" class="side-nav-link"  active-class="text-primary">
                         <i class="uil-user"></i>

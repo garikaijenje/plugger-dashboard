@@ -6,14 +6,13 @@ namespace App\filters;
 
 use App\filters\core\ModelFilter;
 
-class UserFilter extends ModelFilter
+class GenreFilter extends ModelFilter
 {
     protected  $filters = [
         'search'
     ];
     protected  $equal = [
         'id',
-        'roles.name'
     ];
     protected  $dates = [
         'created_at',
@@ -27,8 +26,7 @@ class UserFilter extends ModelFilter
 
     protected $search = [
       'name',
-      'last_name',
-      'email',
+      'description',
     ];
 
 }

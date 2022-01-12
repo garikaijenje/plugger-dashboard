@@ -7,9 +7,12 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ConfigurationController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\ProvinceController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
+use App\Language;
 use App\User;
 use Illuminate\Support\Facades\Route;
 
@@ -110,6 +113,34 @@ Route::prefix('admin')->group(function (){
                 Route::get('/' ,  [AuditController::class , 'timeline']);
                 Route::get('/{model}/view' ,  [AuditController::class , 'view']);
             });
+
+            // Genre
+
+            Route::prefix('genre')->group(function (){
+                Route::get('/' ,  [GenreController::class , 'index']);
+                Route::post('/create' ,  [GenreController::class , 'store']);
+                Route::get('/{model}/view' ,  [GenreController::class , 'view']);
+                Route::post('/{model}/update' ,  [GenreController::class , 'update']);
+            });
+
+            // Province
+
+            Route::prefix('province')->group(function (){
+                Route::get('/' ,  [ProvinceController::class , 'index']);
+                Route::post('/create' ,  [ProvinceController::class , 'store']);
+                Route::get('/{model}/view' ,  [ProvinceController::class , 'view']);
+                Route::post('/{model}/update' ,  [ProvinceController::class , 'update']);
+            });
+
+            // Language
+
+            Route::prefix('language')->group(function (){
+                Route::get('/' ,  array(LanguageController::class , 'index'));
+                Route::post('/create' ,  [LanguageController::class , 'store']);
+                Route::get('/{model}/view' ,  [LanguageController::class , 'view']);
+                Route::post('/{model}/update' ,  [LanguageController::class , 'update']);
+            });
+
 
         });
 

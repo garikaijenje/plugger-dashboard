@@ -6,7 +6,7 @@ namespace App\filters;
 
 use App\filters\core\ModelFilter;
 
-class GenreFilter extends ModelFilter
+class ProvinceFilter extends ModelFilter
 {
     protected  $filters = [
         'search'

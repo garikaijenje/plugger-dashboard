@@ -1,6 +1,8 @@
 <?php
 
 use App\Genre;
+use App\Language;
+use App\Province;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
@@ -71,7 +73,38 @@ class DatabaseSeeder extends Seeder
             echo 'Adding Genre : ' .  $genre . PHP_EOL;
 
             Genre::query()->create([
-                'name' =>  $genre
+                'name' =>  $genre,
+                'description' =>  $genre
+            ]);
+        }
+
+        $list = [
+            'Shona',
+            'English',
+        ];
+
+        foreach ($list as $item)
+        {
+            echo 'Adding Language : ' .  $item . PHP_EOL;
+
+            Language::query()->create([
+                'name' =>  $item,
+                'description' =>  $item
+            ]);
+        }
+
+        $list = [
+            'Mashonaland',
+            'Manicaland',
+        ];
+
+        foreach ($list as $item)
+        {
+            echo 'Adding Province : ' .  $item . PHP_EOL;
+
+            Province::query()->create([
+                'name' =>  $item,
+                'description' =>  $item
             ]);
         }
 

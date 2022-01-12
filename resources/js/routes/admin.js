@@ -76,46 +76,128 @@ const routes = [
             },
         ]
     },
-    //
-    // // Roles
-    //
-    // {
-    //     path : '/admin/roles/create',
-    //     component : () => import('../components/roles/create'),
-    //     meta: {
-    //         requiresAuth: true
-    //     }
-    // },
-    // {
-    //     path : '/admin/roles',
-    //     component : () => import('../components/roles/index'),
-    //     meta: {
-    //         requiresAuth: true
-    //     }
-    // },
-    // {
-    //     path : '/admin/roles/:id/view',
-    //     component : () => import('../components/roles/open'),
-    //     meta: {
-    //         requiresAuth: true
-    //     },
-    //     children : [
-    //         {
-    //             path : '/admin/roles/:id/view',
-    //             component : () => import('../components/roles/view'),
-    //             meta: {
-    //                 requiresAuth: true
-    //             }
-    //         },
-    //         {
-    //             path : '/admin/roles/:id/edit',
-    //             component : () => import('../components/roles/edit'),
-    //             meta: {
-    //                 requiresAuth: true
-    //             }
-    //         }
-    //     ]
-    // },
+
+    // Genre
+
+    {
+        path : '/admin/genre/create',
+        component : () => import('../components/genre/create'),
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
+        path : '/admin/genre',
+        component : () => import('../components/genre/index'),
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
+        path : '/admin/genre/:id/view',
+        component : () => import('../components/genre/open'),
+        meta: {
+            requiresAuth: true
+        },
+        children : [
+            {
+                path : '/admin/genre/:id/view',
+                component : () => import('../components/genre/view'),
+                meta: {
+                    requiresAuth: true
+                }
+            },
+            {
+                path : '/admin/genre/:id/edit',
+                component : () => import('../components/genre/edit'),
+                meta: {
+                    requiresAuth: true
+                }
+            }
+        ]
+    },
+
+    // Language
+
+    {
+        path : '/admin/language/create',
+        component : () => import('../components/language/create'),
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
+        path : '/admin/language',
+        component : () => import('../components/language/index'),
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
+        path : '/admin/language/:id/view',
+        component : () => import('../components/language/open'),
+        meta: {
+            requiresAuth: true
+        },
+        children : [
+            {
+                path : '/admin/language/:id/view',
+                component : () => import('../components/language/view'),
+                meta: {
+                    requiresAuth: true
+                }
+            },
+            {
+                path : '/admin/language/:id/edit',
+                component : () => import('../components/language/edit'),
+                meta: {
+                    requiresAuth: true
+                }
+            }
+        ]
+    },
+
+    // Province
+
+    {
+        path : '/admin/province/create',
+        component : () => import('../components/province/create'),
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
+        path : '/admin/province',
+        component : () => import('../components/province/index'),
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
+        path : '/admin/province/:id/view',
+        component : () => import('../components/province/open'),
+        meta: {
+            requiresAuth: true
+        },
+        children : [
+            {
+                path : '/admin/province/:id/view',
+                component : () => import('../components/province/view'),
+                meta: {
+                    requiresAuth: true
+                }
+            },
+            {
+                path : '/admin/province/:id/edit',
+                component : () => import('../components/province/edit'),
+                meta: {
+                    requiresAuth: true
+                }
+            }
+        ]
+    },
+
+
     //
     // Configuration
 
