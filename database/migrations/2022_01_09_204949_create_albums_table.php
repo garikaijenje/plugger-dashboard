@@ -15,16 +15,12 @@ class CreateAlbumsTable extends Migration
     {
         Schema::create('albums', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->nullable();
             $table->string('artist')->nullable();
             $table->bigInteger('artist_id')->nullable();
-            $table->bigInteger('genre_id')->nullable();
+            $table->bigInteger('user_id')->nullable();
+            $table->bigInteger('province_id')->nullable();
             $table->text('description')->nullable();
-            $table->string('cover')->nullable();
-            $table->string('cover_sm')->nullable();
-            $table->string('cover_md')->nullable();
-            $table->string('cover_lg')->nullable();
-            $table->string('cover_original')->nullable();
-            $table->string('cover_optimized')->nullable();
             $table->timestamps();
         });
     }

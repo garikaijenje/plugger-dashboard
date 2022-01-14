@@ -12,8 +12,6 @@
     <link rel="stylesheet" href="{{ asset('bootstrap-4.1.3-dist/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/icons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('site/css/paymentfont.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('site/css/slider-radio.css') }}">
-    <link rel="stylesheet" href="{{ asset('site/css/plyr.css') }}">
     <link rel="stylesheet" href="{{ asset('site/css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
@@ -42,13 +40,7 @@
 <!-- JS -->
 <script src="{{ asset('site/js/jquery-3.5.1.min.js') }}"></script>
 <script src="{{ asset('site/js/bootstrap.bundle.min.js') }}"></script>
-<script src="{{ asset('site/js/owl.carousel.min.js') }}"></script>
-<script src="{{ asset('site/js/jquery.magnific-popup.min.js') }}"></script>
 <script src="{{ asset('site/js/smooth-scrollbar.js') }}"></script>
-<script src="{{ asset('site/js/select2.min.js') }}"></script>
-<script src="{{ asset('site/js/slider-radio.js') }}"></script>
-<script src="{{ asset('site/js/jquery.inputmask.min.js') }}"></script>
-<script src="{{ asset('site/js/plyr.min.js') }}"></script>
 <script src="{{ asset('site/js/main.js') }}"></script>
 <script src="{{ asset('js/app.js') }}"></script>
 </body>

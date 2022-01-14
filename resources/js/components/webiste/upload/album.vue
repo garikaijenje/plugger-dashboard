@@ -31,6 +31,7 @@
                                     <input type="text" v-model="form.album" name="name" :class="[ 'sign__input' , form.errors.get('album') ? 'is-invalid' : '' ]" placeholder="Enter Album Name" autocomplete="unique-1">
                                     <div v-text="form.errors.get('album')" class="main__table-text--red small"/>
                                 </div>
+
                                 <div class="sign__group">
                                     <label class="text-white small">Genre</label>
                                     <select @change="addGenre" type="text" v-model="selectedGenre" name="genre" :class="[ 'sign__input' , form.errors.get('genre') ? 'is-invalid' : '' ]">
@@ -46,6 +47,7 @@
                                     </div>
 
                                 </div>
+
                                 <div class="sign__group">
                                     <label class="text-white small">Description</label>
                                     <textarea type="text" v-model="form.description" name="description" :class="[ 'sign__input' , form.errors.get('description') ? 'is-invalid' : '' ]">
@@ -92,6 +94,7 @@
                 form : new Form({
                     album : '',
                     genre : [],
+                    genreIDs : [],
                     artist : '',
                     artist_id : '',
                     description : '',
@@ -103,9 +106,8 @@
 
             submit()
             {
-                this.form.upload('/album/create').then((response) => {
-
-
+                this.form.genreIDs = this.form.genre.map(e => e.id);
+                this.form.upload('/site/library/albums').then((response) => {
 
                 }).catch((error) => {
                 });

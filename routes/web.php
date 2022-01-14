@@ -53,10 +53,16 @@ Route::prefix('genre')->group(function (){
 
 Route::middleware('auth')->group(function (){
 
-    Route::prefix('album')->group(function (){
-        Route::post('/create' , [AlbumController::class , 'create']);
-    });
+    Route::prefix('site')->group(function (){
 
+        Route::prefix('library')->group(function (){
+            Route::post('/albums' , [AlbumController::class , 'create']);
+            Route::get('/albums' , [AlbumController::class , 'index']);
+        });
+
+
+
+    });
 });
 
 // Admin Site

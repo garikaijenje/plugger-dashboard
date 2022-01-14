@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Console\Commands;
+use App\Image;
 use Illuminate\Console\Command;
+use Illuminate\Support\Str;
 
 class TestThings extends Command
 {

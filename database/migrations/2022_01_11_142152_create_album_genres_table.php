@@ -18,6 +18,9 @@ class CreateAlbumGenresTable extends Migration
             $table->bigInteger('album_id');
             $table->bigInteger('genre_id');
             $table->timestamps();
+
+            $table->index(['album_id' , 'genre_id']);
+
         });
     }
 
