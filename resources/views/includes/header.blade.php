@@ -102,7 +102,7 @@
             </li>
 
             <li class="sidebar__nav-item">
-                <router-link to="/b" class="sidebar__nav-link">
+                <router-link to="/profile" class="sidebar__nav-link">
                     <i class="mdi mdi-account mdi-18px mr-2"></i> <span>Profile</span>
                 </router-link>
             </li>
@@ -114,7 +114,7 @@
             </li>
 
             <li class="sidebar__nav-item">
-                <router-link to="/b" class="sidebar__nav-link">
+                <router-link to="/library/songs" class="sidebar__nav-link">
                     <i class="mdi  mdi-music-note mdi-18px mr-2"></i> <span>Songs</span>
                 </router-link>
             </li>

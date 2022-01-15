@@ -17,7 +17,6 @@
         "ext-simplexml": "*",
         "barryvdh/laravel-debugbar": "^3.2",
         "doctrine/dbal": "^3.1",
-        "elasticsearch/elasticsearch": "^7.13",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^7.0.1",
@@ -30,8 +29,8 @@
         "owen-it/laravel-auditing": "^10.0",
         "predis/predis": "^1.1",
         "spatie/laravel-permission": "^3.11",
-        "spinen/laravel-quickbooks-client": "^4.0",
-        "stripe/stripe-php": "^7.97"
+        "stripe/stripe-php": "^7.97",
+        "wapmorgan/mp3info": "^0.0.7"
     },
     "require-dev": {
         "facade/ignition": "^2.3.6",

@@ -16,7 +16,7 @@ class AlbumController extends Controller
         return api()
                 ->data('list', Album::filter($filter , [
                     'user_id' => auth()->id()
-                ])->with(['cover' , 'genre'])->paginate(\request('size') ?? 30))
+                ])->with(['cover' , 'genre' , 'language' , 'province'])->paginate(\request('size') ?? 30))
             ->build();
     }
 
@@ -25,7 +25,9 @@ class AlbumController extends Controller
         $request->validate([
             'file' => ['required'],
             'album' => ['required'],
-            'genre' => ['required'],
+            'genreIDs' => ['required'],
+            'languageIDs' => ['required'],
+            'province' => ['required'],
             'artist' => ['required_without:artist_id'],
             'artist_id' => ['required_without:artist'],
             'description' => ['required'],
@@ -38,11 +40,16 @@ class AlbumController extends Controller
             'name' => $request->get('album'),
             'description' => $request->get('description'),
             'artist_id' => $request->get('artist_id'),
+            'province_id' => $request->get('province'),
             'user_id' => auth()->id(),
         ]);
 
         $album->genre()->sync(
             explode(',', $request->get('genreIDs'))
+        );
+
+        $album->language()->sync(
+            explode(',', $request->get('languageIDs'))
         );
 
         $file = $request->file('file');
@@ -68,4 +75,11 @@ class AlbumController extends Controller
         
         return api()->data('model', $album)->build('Album successfully created');
     }
+
+    public function view(Album $model)
+    {
+        $model->load(['cover' , 'genre' , 'language' , 'province']);
+        return api()->data('model', $model)->build();
+    }
+
 }

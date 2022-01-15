@@ -63,10 +63,10 @@ class OptimizeImage implements ShouldQueue
 
             ],[
                 'name' => 'large',
-                'quality' => 80 ,
+                'quality' => 95 ,
                 'dimensions' => [
-                    'width' => 1180,
-                    'height' => 600,
+                    'width' => 750,
+                    'height' => 1000,
                 ]
 
             ],

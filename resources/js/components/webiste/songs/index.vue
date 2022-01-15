@@ -4,7 +4,7 @@
             <ul class="breadcrumb bg-transparent">
                 <li class="breadcrumb__item"><router-link to="/">Home</router-link></li>
                 <li class="breadcrumb__item">My Library</li>
-                <li class="breadcrumb__item breadcrumb__item--active">Albums</li>
+                <li class="breadcrumb__item breadcrumb__item--active">Songs</li>
             </ul>
         </div>
         <div class="col-12">
@@ -47,6 +47,7 @@
                                     <th></th>
                                     <th></th>
                                     <th>Name</th>
+                                    <th>Album</th>
                                     <th>Artist</th>
                                     <th>Genre</th>
                                     <th>Language</th>
@@ -69,10 +70,10 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="main__table-text">{{ row.name }}</div>
+                                        <div class="main__table-text">{{ row.song_title }}</div>
                                     </td>
                                     <td>
-                                        <div class="main__table-text">{{ row.artist }}</div>
+                                        <div class="main__table-text">{{ row.album_title }}</div>
                                     </td>
                                     <td class="text-wrap">
                                         <div class="main__table-text">
@@ -105,7 +106,7 @@
                                     </td>
                                     <td>
                                         <div class="d-flex justify-content-center align-items-center">
-                                            <router-link :to="`/library/albums/${row.id}/view`" class="single-item__export mr-3" type="button">
+                                            <router-link :to="`/library/songs/${row.id}/view`" class="single-item__export mr-3" type="button">
                                                 <i class="mdi mdi-eye mdi-24px"></i>
                                             </router-link>
                                         </div>
@@ -131,7 +132,7 @@
         data(){
             return {
                 data :  new Data({
-                    url : '/site/library/albums',
+                    url : '/site/library/songs',
                     prefix : 'list'
                 })
             };

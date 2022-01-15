@@ -25,6 +25,10 @@ const routes = [
         component : require('../components/webiste/album/index').default,
     },
     {
+        path : '/library/songs',
+        component : require('../components/webiste/songs/index').default,
+    },
+    {
         path : '/library/albums/:id/view',
         component : require('../components/webiste/album/view').default,
     },

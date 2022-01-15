@@ -3,6 +3,7 @@
 use App\Genre;
 use App\Language;
 use App\Province;
+use App\State;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
@@ -106,6 +107,24 @@ class DatabaseSeeder extends Seeder
                 'name' =>  $item,
                 'description' =>  $item
             ]);
+        }
+
+
+        $states = [
+            ['01' , 'Uploaded'],
+            ['02' , 'Waiting Admin approval'],
+            ['03' , 'Waiting ZIMURA approval'],
+            ['04' , 'Published'],
+        ];
+
+
+        foreach ($states as $state){
+
+            State::query()->create([
+                'code' => $state[0],
+                'description' => $state[1]
+            ]);
+
         }
 
     }

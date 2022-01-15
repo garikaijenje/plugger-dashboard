@@ -31,15 +31,6 @@
                                     <div v-text="form.errors.get('instrumental_file')" class="main__table-text--red small"/>
                                 </div>
                             </div>
-                            <div class="col-lg-12 mt-3">
-
-                                <div class="sign__group">
-                                    <label class="text-white small">Song Title</label>
-                                    <input type="text" v-model="form.song_title" name="name" :class="[ 'sign__input' , form.errors.get('song_title') ? 'is-invalid' : '' ]" placeholder="Enter Song Title" autocomplete="unique-1">
-                                    <div v-text="form.errors.get('song_title')" class="main__table-text--red small"/>
-                                </div>
-                            </div>
-
                             <div class="col-lg-6 mt-3">
 
                                 <div class="sign__group">
@@ -174,13 +165,6 @@
         data()
         {
             return {
-                album : {
-                    cover : {},
-                    province : {},
-                    genre : [],
-                    language : [],
-                    artists : {},
-                },
                 loading : false,
                 previewImage: null,
                 selectedGenre: {},
@@ -195,7 +179,6 @@
                 languageLoading : false,
                 form : new Form({
                     song_file : '',
-                    song_title : '',
                     instrumental_file : '',
                     track_number : '',
                     release_date : '',

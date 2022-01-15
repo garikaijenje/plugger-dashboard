@@ -11,6 +11,7 @@ use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ProvinceController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\SongController;
 use App\Http\Controllers\UserController;
 use App\Language;
 use App\User;
@@ -47,21 +48,26 @@ Route::post('/password/reset' , [AuthController::class , 'reset']);
 Route::post('/reset' , [AuthController::class , 'resetPassword']);
 
 
-Route::prefix('genre')->group(function (){
-    Route::get('/list' , [GenreController::class , 'list']);
-});
+Route::get('/genre/list' , [GenreController::class , 'list']);
+Route::get('/province/list' , [ProvinceController::class , 'list']);
+Route::get('/language/list' , [LanguageController::class , 'list']);
 
 Route::middleware('auth')->group(function (){
 
     Route::prefix('site')->group(function (){
 
         Route::prefix('library')->group(function (){
+
             Route::post('/albums' , [AlbumController::class , 'create']);
             Route::get('/albums' , [AlbumController::class , 'index']);
+            Route::get('/albums/{model}/view' , [AlbumController::class , 'view']);
+
+
+            Route::post('/songs' , [SongController::class , 'create']);
+            Route::get('/songs' , [SongController::class , 'index']);
+
+
         });
-
-
-
     });
 });
 
