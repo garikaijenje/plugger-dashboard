@@ -5,9 +5,15 @@ namespace App;
 use App\Core\DefaultModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
+/**
+ * @property mixed id
+ */
 class Song extends DefaultModel
 {
     use HasFactory;
+
+
+    protected $with = ['genre' , 'language' , 'cover' , 'province' , 'state'];
 
     public function genre()
     {

@@ -5,7 +5,7 @@ window.action = function (action , name , url ) {
             text: `You want to ${action.replace('-' , ' ')} this ${name}!`,
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#22568C',
+            confirmButtonColor: '#6200EE',
             cancelButtonColor: '#d33',
             confirmButtonText: `Yes, ${action.replace('-' , ' ')}!`
         }).then((result) => {

@@ -17,9 +17,6 @@
                                     </div>
                                 </div>
                                 <div v-text="form.errors.get('file')" class="main__table-text--red small"/>
-
-
-
                             </div>
                             <div class="col-lg-6">
                                 <div class="sign__group">
@@ -85,7 +82,7 @@
                         </div>
 
                         <div class="col-lg-12">
-                            <button  @click.prevent="submit" :class="['sign__btn' , form.loading || loading || pageLoading ? 'btn-loading' : '']" type="button">Create Album</button>
+                            <button  @click.prevent="submit" :class="['sign__btn' , form.loading || loading || pageLoading ? 'btn-loading' : '']" type="button">Update Album</button>
                         </div>
 
 
@@ -139,19 +136,34 @@
         },
 
         computed : {
-           pageLoading : function ()
-           {
+            pageLoading : function ()
+            {
                 return  this.genreLoading || this.provinceLoading || this.languageLoading;
-           }
+            }
         },
 
         methods: {
-
+            init()
+            {
+                this.form.loading = true;
+                window.axios.get(`${window.location.origin}/site/library/albums/${this.$route.params.id}/view`).then((response) => {
+                    this.form.album = response.data.body.model.name;
+                    this.form.artist = response.data.body.model.artist;
+                    // this.form.artist_id = response.data.body.model.artist_id;
+                    this.form.language = response.data.body.model.language;
+                    this.form.province = response.data.body.model.province_id;
+                    this.form.description = response.data.body.model.description;
+                    this.form.genre = response.data.body.model.genre;
+                    this.previewImage = response.data.body.model.cover.path;
+                }).finally(() => {
+                    this.form.loading = false;
+                });
+            },
             submit()
             {
                 this.form.genreIDs = this.form.genre.map(e => e.id);
                 this.form.languageIDs = this.form.language.map(e => e.id);
-                this.form.upload('/site/library/albums').then((response) => {
+                this.form.upload(`/site/library/albums/${this.$route.params.id}/edit`).then((response) => {
                     this.$router.push(`/library/albums/${response.data.body.model.id}/view`);
                 }).catch((error) => {
                 });
@@ -202,7 +214,7 @@
             {
                 if (this.selectedGenre !== {} && !this.form.genre.includes(this.selectedGenre))
                 {
-                   this.form.genre.push(this.selectedGenre);
+                    this.form.genre.push(this.selectedGenre);
                 }
 
                 this.selectedGenre = {};
@@ -211,7 +223,7 @@
             {
                 if (this.selectLanguage !== {} && !this.form.genre.includes(this.selectLanguage))
                 {
-                   this.form.language.push(this.selectLanguage);
+                    this.form.language.push(this.selectLanguage);
                 }
 
                 this.selectLanguage = {};
@@ -233,6 +245,7 @@
         },
         mounted()
         {
+            this.init();
             this.loadGenre();
             this.loadLanguage();
             this.loadProvince();

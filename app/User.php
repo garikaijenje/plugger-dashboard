@@ -21,6 +21,7 @@ use Spinen\QuickBooks\HasQuickBooksToken;
  * @property mixed phone
  * @property mixed otp
  * @property mixed otp_expiry
+ * @property Artist artist
  */
 class User extends Authenticatable implements \OwenIt\Auditing\Contracts\Auditable
 {
@@ -29,6 +30,8 @@ class User extends Authenticatable implements \OwenIt\Auditing\Contracts\Auditab
     protected $appends = [
         'select_name','avatar_name'
     ];
+
+    protected $with = [ 'cover' , 'artist' ];
 
     public function getSelectNameAttribute()
     {
@@ -68,4 +71,25 @@ class User extends Authenticatable implements \OwenIt\Auditing\Contracts\Auditab
         'created_at' => 'datetime:Y-m-d H:i:s',
         'updated_at' => 'datetime:Y-m-d H:i:s',
     ];
+
+
+    public function cover()
+    {
+        return $this->morphOne(
+            Image::class,
+            'image'
+        )->where(
+            'key' , '=' , 'user-cover'
+        );
+    }
+
+    public function artist()
+    {
+        return $this->hasOne(
+            Artist::class,
+            'user_id',
+            'id'
+        );
+    }
+
 }

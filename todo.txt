@@ -1,83 +1,14 @@
-
-User
-- name
-- last_name
-- phone
-- email
-- password
-- otp
-- 2_factor
-- type - artist , zimura , radio , tv , admin , individual
-- dob
-- sex
-
-Artist  extends User
- - Stage Name
- - Nationality
- - ID Number
- - Start year
- - marital status
- - booking number
- - facebook
- - ig
- - twitter
- - tiktok
- - n_name
- - n_phone
- - n_email
- - status
- - completed profile
-
-Images , Documents
-
-Songs
- - ref
- - state
- - album_id
- - type , single . album
- - release_date
- - Genre_id
- - writer
- - copyrights
- - track number
- - studio_name
- - producer
- - province_id
- - Language_id
- - song
- - song_file_name
- - song_state
- - instrumental
- - instrumental_file_name
- - instrumental_state
- - video
- - video_file_name
- - video_state
- - duration
- - arranger
- - song_rating
- - video_rating
- - plays
+- list songs
+- upload song
+- view song
+- update song
 
 
-Subscriptions
- - start
- - end
- - expires_at
- - type
 
- Album
-  - Artist
-  - name
-  - artist_id
-  - genre_id
-  - Description
-  - cover
+- add songs to cart
+- checkout
+- payment
 
-
-Language
-Province
-Genre
-
-System Configuration
-Notifications - Laravel Notifications
+- approve songs
+- update dashboard
+- notifications

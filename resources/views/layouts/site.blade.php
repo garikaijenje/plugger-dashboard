@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     @if (auth()->check())
-        <meta name="user" content="{{ json_encode(auth()->user()) }}">
+        <meta name="user" content="{{ json_encode($user) }}">
     @endif
 
     <link rel="stylesheet" href="{{ asset('bootstrap-4.1.3-dist/css/bootstrap.min.css') }}">

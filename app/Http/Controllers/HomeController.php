@@ -9,6 +9,7 @@ use App\Service\NetoneAirtimeService;
 use App\System;
 use App\Transaction;
 use App\User;
+use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\URL;
@@ -19,12 +20,13 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return Renderable
      */
     public function index()
     {
         /** @var User $user */
         $user = auth()->user();
+        $user->load('cover');
         $p = $user->getAllPermissions();
         $user = $user->toArray();
         $user['permissions'] = $p;
@@ -84,21 +86,21 @@ class HomeController extends Controller
 
     public function welcome()
     {
-        $title  = "Buy ZESA Online - Magetsi";
-        $description  = "Do You Want To Buy ZESA Online Using EcoCash, VISA, or Mastercard? Visit The Magetsi Platform And Enjoy A simple And Straightforward Online Payment Process.";
 
+        $user = null;
 
-        $url = \request()->getPathInfo();
-
-        if ($url == "/airtime")
+        if (auth()->check())
         {
-            $title = "Buy NetOne Airtime Using EcoCash - Magetsi";
-            $description = "Do You Want To Buy NetOne Airtime Using EcoCash, Visa Or Mastercard? Buy From The Magetsi Platform And Get 5% Extra Airtime. Enjoy Unparalleled Convenience.";
+            /** @var User $user */
+            $user = auth()->user();
+            $user->load('cover');
+            $p = $user->getAllPermissions();
+            $user = $user->toArray();
+            $user['permissions'] = $p;
         }
 
         return view('welcome' , [
-            'title' =>  $title,
-            'description' => $description
+            'user' => $user
         ]);
     }
 

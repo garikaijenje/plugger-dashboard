@@ -70,25 +70,25 @@
     <!-- sidebar nav -->
     <ul class="sidebar__nav">
         <li class="sidebar__nav-item">
-            <router-link active-class="sidebar__nav-link--active" to="/" class="sidebar__nav-link">
+            <router-link exact active-class="sidebar__nav-link--active" to="/" class="sidebar__nav-link">
                 <i class="mdi mdi-home mdi-18px mr-2"></i><span>Home</span>
             </router-link>
         </li>
 
         <li class="sidebar__nav-item">
-            <router-link to="/a" class="sidebar__nav-link">
+            <router-link exact to="/a" class="sidebar__nav-link">
                 <i class="mdi mdi-music mdi-18px mr-2"></i><span>Music</span>
             </router-link>
         </li>
 
         <li class="sidebar__nav-item">
-            <router-link to="/a" class="sidebar__nav-link">
+            <router-link exact to="/a" class="sidebar__nav-link">
                 <i class="mdi mdi-account-supervisor-outline mdi-18px mr-2"></i><span>Artists</span>
             </router-link>
         </li>
 
         <li class="sidebar__nav-item">
-            <router-link to="/b" class="sidebar__nav-link">
+            <router-link exact to="/b" class="sidebar__nav-link">
                 <i class="mdi mdi-music-circle-outline mdi-18px mr-2"></i><span>New Releases</span>
             </router-link>
         </li>
@@ -102,19 +102,19 @@
             </li>
 
             <li class="sidebar__nav-item">
-                <router-link to="/profile" class="sidebar__nav-link">
+                <router-link exact to="/profile" class="sidebar__nav-link">
                     <i class="mdi mdi-account mdi-18px mr-2"></i> <span>Profile</span>
                 </router-link>
             </li>
 
             <li class="sidebar__nav-item">
-                <router-link to="/library/albums" class="sidebar__nav-link">
+                <router-link exact to="/library/albums" class="sidebar__nav-link">
                     <i class="mdi mdi-folder mdi-18px mr-2"></i> <span>Albums</span>
                 </router-link>
             </li>
 
             <li class="sidebar__nav-item">
-                <router-link to="/library/songs" class="sidebar__nav-link">
+                <router-link exact to="/library/songs" class="sidebar__nav-link">
                     <i class="mdi  mdi-music-note mdi-18px mr-2"></i> <span>Songs</span>
                 </router-link>
             </li>

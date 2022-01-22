@@ -3,7 +3,7 @@
     <div class="sign">
         <div class="sign__content">
             <!-- authorization form -->
-            <form @submit.prevent="runForm" class="sign__form">
+            <form @submit.prevent="runForm" ac class="sign__form">
                 <a href="/" class="sign__logo">
                     <img src="/images/plugger-logo-1-white.png" alt="">
                 </a>

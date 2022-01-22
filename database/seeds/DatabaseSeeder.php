@@ -1,5 +1,6 @@
 <?php
 
+use App\Artist;
 use App\Genre;
 use App\Language;
 use App\Province;
@@ -44,6 +45,10 @@ class DatabaseSeeder extends Seeder
             'phone' => '263771222081',
             'type' => 'admin',
             'password' => Hash::make('password')
+        ]);
+
+        Artist::query()->create([
+            'user_id' => $user->id
         ]);
 
         /** @var Role $admin */
@@ -109,14 +114,12 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
-
         $states = [
             ['01' , 'Uploaded'],
             ['02' , 'Waiting Admin approval'],
             ['03' , 'Waiting ZIMURA approval'],
             ['04' , 'Published'],
         ];
-
 
         foreach ($states as $state){
 

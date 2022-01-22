@@ -9,6 +9,9 @@ class Album extends DefaultModel
 {
     use HasFactory;
 
+
+    protected $with = ['cover' , 'genre' , 'language' , 'province'];
+
     public function genre()
     {
         return $this->belongsToMany(Genre::class ,
@@ -43,6 +46,15 @@ class Album extends DefaultModel
             Province::class,
             'id',
             'province_id'
+        );
+    }
+
+    public function songs()
+    {
+        return $this->hasMany(
+            Song::class,
+            'album_id',
+            'id'
         );
     }
 

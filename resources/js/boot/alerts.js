@@ -8,6 +8,7 @@ let alerts = {
                 text: response.data.message,
                 showConfirmButton: true,
                 padding: '20px',
+                confirmButtonColor: "#6200EE",
             }).then((e) => {
                 resolve(response);
             });
@@ -20,7 +21,8 @@ let alerts = {
                 title: response.data.message,
                 showConfirmButton: false,
                 padding: '20px',
-                timer: 2000
+                timer: 2000,
+                confirmButtonColor: "#6200EE",
             }).then((e) => {
                 resolve(response);
             });
@@ -33,7 +35,8 @@ let alerts = {
                 title: response.data.message,
                 showConfirmButton: false,
                 padding: '20px',
-                timer: 2000
+                timer: 2000,
+                confirmButtonColor: "#6200EE",
             }).then((e) => {
                 resolve(response);
             });
@@ -46,7 +49,8 @@ let alerts = {
                 title: response.message,
                 showConfirmButton: false,
                 padding: '20px',
-                timer: 2000
+                timer: 2000,
+                confirmButtonColor: "#6200EE",
             }).then((e) => {
                 resolve(response);
             });

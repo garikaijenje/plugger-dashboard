@@ -17,9 +17,6 @@
                                     </div>
                                 </div>
                                 <div v-text="form.errors.get('file')" class="main__table-text--red small"/>
-
-
-
                             </div>
                             <div class="col-lg-6">
                                 <div class="sign__group">
@@ -233,6 +230,10 @@
         },
         mounted()
         {
+
+            this.form.artist = window.user.artist.stage_name;
+            this.form.artist_id = window.user.artist.id;
+
             this.loadGenre();
             this.loadLanguage();
             this.loadProvince();

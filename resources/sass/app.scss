@@ -276,8 +276,8 @@ Loader
  */
 @-webkit-keyframes slide-in-left {
     0% {
-        -webkit-transform: translateX(-1000px);
-        transform: translateX(-1000px);
+        -webkit-transform: translateX(1000px);
+        transform: translateX(1000px);
         opacity: 0;
     }
     100% {
@@ -288,8 +288,8 @@ Loader
 }
 @keyframes slide-in-left {
     0% {
-        -webkit-transform: translateX(-1000px);
-        transform: translateX(-1000px);
+        -webkit-transform: translateX(1000px);
+        transform: translateX(1000px);
         opacity: 0;
     }
     100% {
@@ -328,6 +328,9 @@ Loader
         opacity: 0.5;
     }
 }
+
+
+
 
 
 .side-open {
@@ -681,6 +684,12 @@ div.remove-container a{
     min-height: 80vh;
 }
 
+.mh-50vh {
+    min-height: 50vh;
+}
+
+.text-capitalize {
+    text-transform: capitalize !important; }
 
 .alert-plugger {
     background-color: #6200EE;

@@ -2,6 +2,7 @@
 
 use App\Album;
 use App\Http\Controllers\AlbumController;
+use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\AuditController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ConfigurationController;
@@ -9,6 +10,7 @@ use App\Http\Controllers\GenreController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProvinceController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SongController;
@@ -53,20 +55,24 @@ Route::get('/province/list' , [ProvinceController::class , 'list']);
 Route::get('/language/list' , [LanguageController::class , 'list']);
 
 Route::middleware('auth')->group(function (){
-
     Route::prefix('site')->group(function (){
-
         Route::prefix('library')->group(function (){
 
             Route::post('/albums' , [AlbumController::class , 'create']);
             Route::get('/albums' , [AlbumController::class , 'index']);
             Route::get('/albums/{model}/view' , [AlbumController::class , 'view']);
-
+            Route::get('/albums/{model}/songs' , [AlbumController::class , 'songs']);
+            Route::get('/albums/{model}/delete' , [AlbumController::class , 'delete']);
+            Route::post('/albums/{model}/edit' , [AlbumController::class , 'update']);
 
             Route::post('/songs' , [SongController::class , 'create']);
             Route::get('/songs' , [SongController::class , 'index']);
+            Route::get('/songs/{model}/view' , [SongController::class , 'view']);
+            Route::post('/songs/{model}/edit' , [SongController::class , 'edit']);
 
-
+            Route::post('/profile/edit' , [ProfileController::class , 'update']);
+            Route::post('/profile/image' , [ProfileController::class , 'image']);
+            Route::post('/artist/edit' , [ArtistController::class , 'update']);
         });
     });
 });

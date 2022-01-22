@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Artist;
 use App\User;
 use Exception;
 use Illuminate\Http\JsonResponse;
@@ -168,6 +169,10 @@ class AuthController extends Controller
             'phone' => $request->get('phone'),
             'status' =>  true,
             'password' => Hash::make($request->get('password')),
+        ]);
+
+        Artist::query()->create([
+            'user_id' => $user->id
         ]);
 
         Auth::loginUsingId($user->id);

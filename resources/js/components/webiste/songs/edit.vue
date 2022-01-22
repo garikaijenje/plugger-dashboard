@@ -31,6 +31,15 @@
                                     <div v-text="form.errors.get('instrumental_file')" class="main__table-text--red small"/>
                                 </div>
                             </div>
+                            <div class="col-lg-12 mt-3">
+
+                                <div class="sign__group">
+                                    <label class="text-white small">Song Title</label>
+                                    <input type="text" v-model="form.song_title" name="name" :class="[ 'sign__input' , form.errors.get('song_title') ? 'is-invalid' : '' ]" placeholder="Enter Song Title" autocomplete="unique-1">
+                                    <div v-text="form.errors.get('song_title')" class="main__table-text--red small"/>
+                                </div>
+                            </div>
+
                             <div class="col-lg-6 mt-3">
 
                                 <div class="sign__group">
@@ -88,20 +97,46 @@
                                 </div>
 
                                 <div class="sign__group">
-                                    <label class="text-white small">Description</label>
-                                    <textarea type="text" v-model="form.description" name="description" :class="[ 'sign__input' , form.errors.get('description') ? 'is-invalid' : '' ]">
-                                    </textarea>
-                                    <div v-text="form.errors.get('description')" class="main__table-text--red small"/>
-
-                            </div>
+                                    <label class="text-white small">Writer</label>
+                                    <input type="text" v-model="form.writer" name="name" :class="[ 'sign__input' , form.errors.get('writer') ? 'is-invalid' : '' ]" placeholder="Enter Writer" autocomplete="unique-1">
+                                    <div v-text="form.errors.get('writer')" class="main__table-text--red small"/>
+                                </div>
 
                             </div>
 
 
                             <div class="col-lg-6 mt-3">
                                 <div class="sign__group">
+                                    <label class="text-white small">Copyrights</label>
+                                    <input type="text" v-model="form.copyrights" name="name" :class="[ 'sign__input' , form.errors.get('copyrights') ? 'is-invalid' : '' ]" placeholder="Enter Copyrights"/>
+                                    <div v-text="form.errors.get('copyrights')" class="main__table-text--red small"/>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 mt-3">
+                                <div class="sign__group">
+                                    <label class="text-white small">Arranger </label>
+                                    <input type="text" v-model="form.arranger" name="name" :class="[ 'sign__input' , form.errors.get('arranger') ? 'is-invalid' : '' ]" placeholder="Enter Arranger">
+                                    <div v-text="form.errors.get('arranger')" class="main__table-text--red small"/>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-12">
+                                <div class="sign__group">
+                                    <label class="text-white small">Description</label>
+                                    <textarea type="text" v-model="form.description" name="description" :class="[ 'sign__input' , form.errors.get('description') ? 'is-invalid' : '' ]" placeholder="Enter Description">
+                                    </textarea>
+                                    <div v-text="form.errors.get('description')" class="main__table-text--red small"/>
+
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-6 mt-3">
+                                <div class="sign__group">
                                     <label class="text-white small">Track Number</label>
-                                    <input type="text" v-model="form.track_number" name="name" :class="[ 'sign__input' , form.errors.get('track_number') ? 'is-invalid' : '' ]" placeholder="Enter Track Number"/>
+                                    <input type="number" v-model="form.track_number" name="name" :class="[ 'sign__input' , form.errors.get('track_number') ? 'is-invalid' : '' ]" placeholder="Enter Track Number"/>
                                     <div v-text="form.errors.get('track_number')" class="main__table-text--red small"/>
                                 </div>
                             </div>
@@ -139,7 +174,7 @@
                         </div>
 
                         <div class="col-lg-12">
-                            <button  @click.prevent="submit" :class="['sign__btn' , form.loading || loading || pageLoading ? 'btn-loading' : '']" type="button">Upload Song</button>
+                            <button  @click.prevent="submit" :class="['sign__btn' , form.loading || loading || pageLoading ? 'btn-loading' : '']" type="button">Update Song</button>
                         </div>
 
 
@@ -165,6 +200,14 @@
         data()
         {
             return {
+                user : window.user,
+                album : {
+                    cover : {},
+                    province : {},
+                    genre : [],
+                    language : [],
+                    artists : {},
+                },
                 loading : false,
                 previewImage: null,
                 selectedGenre: {},
@@ -178,8 +221,13 @@
                 language : [],
                 languageLoading : false,
                 form : new Form({
+                    writer : '',
+                    copyrights : '',
+                    arranger : '',
                     song_file : '',
+                    song_title : '',
                     instrumental_file : '',
+                    duration : '',
                     track_number : '',
                     release_date : '',
                     studio_name : '',
@@ -195,6 +243,7 @@
                     artist_id : '',
                     description : '',
                     file : '',
+                    album_id : '',
                 })
             };
         },
@@ -212,7 +261,7 @@
             {
                 this.form.genreIDs = this.form.genre.map(e => e.id);
                 this.form.languageIDs = this.form.language.map(e => e.id);
-                this.form.upload('/site/library/songs').then((response) => {
+                this.form.upload(`/site/library/songs/${this.$route.params.id}/edit`).then((response) => {
                     this.$router.push(`/library/songs/${response.data.body.model.id}/view`);
                 }).catch((error) => {
                 });
@@ -247,11 +296,18 @@
                     this.albumLoading = true;
                     window.axios.get(`${window.location.origin}/site/library/albums/${this.$route.query.album}/view`).then((response) => {
                         this.album = response.data.body.model;
+                        this.form.album_id = response.data.body.model.id;
+                        this.form.album =  response.data.body.model.name;
+                        this.form.artist =  response.data.body.model.artist;
+                        this.form.artist_id =  response.data.body.model.artist_id;
+                        this.form.genre =  response.data.body.model.genre;
+                        this.form.language =  response.data.body.model.language;
+                        this.form.province =  response.data.body.model.province_id;
+
                     }).finally(() => {
                         this.albumLoading = false;
                     });
                 }
-
             },
             loadGenre()
             {
@@ -311,11 +367,28 @@
                 {
                     this.form.language = this.form.language.filter(e => e !== item);
                 }
+            },
+            init()
+            {
+                this.form.loading = true;
+                window.axios.get(`${window.location.origin}/site/library/songs/${this.$route.params.id}/view`).then((response) => {
+                    this.form.extract(response.data.body.model);
+                    this.form.release_date = response.data.body.model.release_date.substr(0 , 10);
+                    this.form.album = response.data.body.model.album_title;
+                    this.form.artist = response.data.body.model.artist_name;
+                    this.form.language = response.data.body.model.language;
+                    this.form.province = response.data.body.model.province_id;
+                    this.form.description = response.data.body.model.description;
+                    this.form.genre = response.data.body.model.genre;
+                    this.previewImage = response.data.body.model.cover.path;
+                }).finally(() => {
+                    this.form.loading = false;
+                });
             }
         },
         mounted()
         {
-            this.loadAlbum();
+            this.init();
             this.loadGenre();
             this.loadLanguage();
             this.loadProvince();
