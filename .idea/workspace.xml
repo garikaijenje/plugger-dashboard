@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="06da2c1a-3a13-4195-b331-663021fe4abd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/components/webiste/payments/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/webiste/payments/view.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ebee09b4-3847-4af7-9330-4a6f72c40a94.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ebee09b4-3847-4af7-9330-4a6f72c40a94.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2022_01_31_120245_create_payments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_01_31_120245_create_payments_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_configuration_edit_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_configuration_edit_vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_genre_create_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_genre_create_vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_genre_edit_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_genre_edit_vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_language_create_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_language_create_vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_language_edit_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_language_edit_vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_province_create_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_province_create_vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_province_edit_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_province_edit_vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_users_create_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_users_create_vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_users_edit_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_users_edit_vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/routes/welcome.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/routes/welcome.js" afterDir="false" />
-    </list>
+    <list default="true" id="06da2c1a-3a13-4195-b331-663021fe4abd" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,8 +75,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/js/routes/welcome.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+            <state relative-caret-position="281">
+              <caret line="50" column="33" lean-forward="true" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -494,12 +475,12 @@
       <workItem from="1643607399432" duration="500000" />
       <workItem from="1643613154834" duration="4057000" />
       <workItem from="1643618304345" duration="139000" />
-      <workItem from="1643619396549" duration="13457000" />
+      <workItem from="1643619396549" duration="13666000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="210036000" />
+    <option name="totallyTimeSpent" value="210245000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="38" y="253" width="1920" height="1019" extended-state="6" />
@@ -931,8 +912,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/routes/welcome.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+        <state relative-caret-position="281">
+          <caret line="50" column="33" lean-forward="true" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
         </state>
       </provider>
     </entry>
