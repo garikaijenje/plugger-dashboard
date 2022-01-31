@@ -8,7 +8,6 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use OwenIt\Auditing\Auditable;
 use Spatie\Permission\Traits\HasRoles;
-use Spinen\QuickBooks\HasQuickBooksToken;
 
 /**
  * @property mixed id

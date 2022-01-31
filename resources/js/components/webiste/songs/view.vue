@@ -103,6 +103,7 @@
             cart()
             {
                 window.action('add' , 'Song to cart' , `${window.location.origin}/site/library/songs/${this.$route.params.id}/cart`).then((response) => {
+                    this.$router.push('/cart');
                     this.init();
                 });
             },

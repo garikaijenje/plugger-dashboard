@@ -167,6 +167,7 @@
             cart()
             {
                 window.action('add' , 'Album to cart' , `${window.location.origin}/site/library/albums/${this.$route.params.id}/cart`).then((response) => {
+                    this.$router.push('/cart');
                     this.init();
                     this.loadSongs();
                 });
