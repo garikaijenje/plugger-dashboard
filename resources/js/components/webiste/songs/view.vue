@@ -14,22 +14,22 @@
                 <div :class="['dimmer' , loading ? 'active' : '']">
                     <div class="loader"></div>
                     <div class="dimmer-content">
-
-                        <div class="col-lg-12 row justify-content-center">
+                        <div class="col-lg-12 row align-items-center p-border-light rounded card-body">
                             <div class="col-lg-3">
                                 <div class="">
                                     <img style="max-width: 300px" v-if="model.cover.optimized"  :src="model.cover.medium" alt="">
                                     <img style="max-width: 300px" v-else :src="model.cover.path" alt="">
                                 </div>
                             </div>
-                            <div class="col-lg-8">
-                                <div class="card-body p-border-light rounded mh-50vh">
+                            <div class="col-lg-9">
+                                <div class="card-body mh-50vh">
                                     <div class="d-flex align-items-center">
                                         <h5 class="m-0 text-capitalize text-white"> SONG INFORMATION</h5>
-                                        <button class="btn btn-primary ml-auto mr-2">Cart</button>
-                                        <router-link :to="`/library/songs/${$route.params.id}/edit`" class="btn btn-primary mr-2">Edit Song</router-link>
-                                        <a target="_blank" :href="`/site/library/songs/${$route.params.id}/download`" class="btn btn-primary mr-2">Download Song</a>
-                                        <a target="_blank" :href="`/site/library/songs/${$route.params.id}/instrumental`" class="btn btn-primary">Download Instrumental</a>
+                                        <button @click="cart" class="btn btn-primary ml-auto mr-2"><i class="mdi mdi-cart mr-2"></i>Cart</button>
+                                        <router-link :to="`/library/songs/${$route.params.id}/edit`" class="btn btn-primary mr-2"><i class="mdi mdi-pencil mr-2"></i>Edit Song</router-link>
+                                        <a target="_blank" :href="`/site/library/songs/${$route.params.id}/download`" class="btn btn-primary mr-2"><i class="mdi mdi-download mr-2"></i>Download Song</a>
+                                        <a target="_blank" :href="`/site/library/songs/${$route.params.id}/instrumental`" class="btn btn-primary mr-2"><i class="mdi mdi-download mr-2"></i>Download Instrumental</a>
+                                        <button @click="remove()" class="btn btn-danger mr-2 "><i class="mdi mdi-trash-can mr-2"></i>Delete</button>
                                     </div>
                                     <div class="mt-5 text-white row">
                                         <p class="col-6"><span>Name : </span> <strong>{{ model.song_title}}</strong> </p>
@@ -42,7 +42,6 @@
                                         <p class="col-6"><span>Writer : </span> <strong>{{ model.writer}}</strong> </p>
                                         <p class="col-6"><span>Studio Name : </span> <strong>{{ model.studio_name}}</strong> </p>
                                         <p class="col-6"><span>Studio Producer : </span> <strong>{{ model.studio_producer}}</strong> </p>
-                                        <p class="col-12"><span>Description : </span> <strong>{{ model.description}}</strong> </p>
                                         <p class="col-6">
                                             <span>Genre : </span>
                                             <strong>
@@ -61,13 +60,15 @@
                                         </p>
                                         <p class="col-6"><span>Province : </span> <strong>{{ model.province.name}}</strong> </p>
                                         <p class="col-6"><span>Created : </span> <strong>{{ model.created_at}}</strong> </p>
+
+                                        <p class="col-12"><span>Description : </span> <strong>{{ model.description}}</strong> </p>
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
-                        
-                        
+
+
 
                     </div>
                 </div>
@@ -93,6 +94,19 @@
             };
         },
         methods : {
+            remove()
+            {
+                window.action('Delete' , 'Song' , `${window.location.origin}/site/library/songs/${this.$route.params.id}/delete`).then((response) => {
+                    this.$router.back();
+                });
+            },
+            cart()
+            {
+                window.action('add' , 'Song to cart' , `${window.location.origin}/site/library/songs/${this.$route.params.id}/cart`).then((response) => {
+
+                });
+            },
+
            init()
            {
                this.loading = true;

@@ -1,4 +1,4 @@
-import Swal from 'sweetalert2';
+import Swal from 'sweetalert2/dist/sweetalert2.js'
 window.Swal = Swal;
 let alerts = {
     success: function (response) {
@@ -9,6 +9,7 @@ let alerts = {
                 showConfirmButton: true,
                 padding: '20px',
                 confirmButtonColor: "#6200EE",
+                background : "#16151a"
             }).then((e) => {
                 resolve(response);
             });
@@ -36,7 +37,7 @@ let alerts = {
                 showConfirmButton: false,
                 padding: '20px',
                 timer: 2000,
-                confirmButtonColor: "#6200EE",
+                confirmButtonColor: "#6200EE"
             }).then((e) => {
                 resolve(response);
             });
@@ -50,7 +51,7 @@ let alerts = {
                 showConfirmButton: false,
                 padding: '20px',
                 timer: 2000,
-                confirmButtonColor: "#6200EE",
+                confirmButtonColor: "#6200EE"
             }).then((e) => {
                 resolve(response);
             });

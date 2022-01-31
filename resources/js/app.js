@@ -5,8 +5,9 @@ import VueMeta from 'vue-meta'
 import Vuex from 'vuex'
 Vue.use(VueMeta);
 Vue.use(Vuex);
-
 Vue.use(Plugin);
+
+
 require('./boot/axios');
 require('./boot/alerts');
 require('./boot/filters');

@@ -47,6 +47,7 @@ class CreateSongsTable extends Migration
             $table->bigInteger('user_id')->nullable();
             $table->bigInteger('province_id')->nullable();
             $table->timestamp('release_date')->nullable();
+            $table->softDeletes();
             $table->timestamps();
 
 

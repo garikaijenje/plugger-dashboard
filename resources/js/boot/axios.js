@@ -41,7 +41,7 @@ window.axios.interceptors.response.use(
                     padding: '20px',
                     confirmButtonColor: '#22568C',
                 }).then((res) => {
-                    window.location = '/admin/login';
+                    window.location = '/';
                 });
             }
 

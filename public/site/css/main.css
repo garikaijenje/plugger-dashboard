@@ -2415,7 +2415,7 @@ body::-webkit-scrollbar-thumb {
 }
 .release__list {
   position: relative;
-  height: 330px;
+  /*height: 330px;*/
   width: 100%;
   overflow: hidden;
   padding-right: 14px;
@@ -2494,7 +2494,7 @@ body::-webkit-scrollbar-thumb {
 @media (min-width: 1200px) {
   .release__list {
     width: calc(100% - 310px);
-    height: 388px;
+    /*height: 388px;*/
   }
   .release__content {
     width: 290px;

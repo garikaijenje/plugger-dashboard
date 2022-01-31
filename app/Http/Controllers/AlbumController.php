@@ -156,11 +156,9 @@ class AlbumController extends Controller
         foreach ($songs as $song)
         {
             /** @var Song $song */
-            $song->cover()->delete();
             $song->delete();
         }
 
-        $model->cover()->delete();
         $model->delete();
 
         return api()->build("Album was successfully deleted");

@@ -15,16 +15,15 @@
                     <div class="loader"></div>
                     <div class="dimmer-content">
 
-                        <div class="release">
-                            <div class="release__content">
-
+                        <div class="row">
+                            <div class="col-lg-4">
                                 <div class="">
                                     <router-link :to="`/upload/song?album=${model.id}`" class="btn btn-primary btn-block mb-3"> <i class="mdi mdi-plus mr-2"></i>Add Songs</router-link>
                                 </div>
 
-                                <div class="release__cover">
-                                    <img v-if="model.cover.optimized"  :src="model.cover.medium" alt="">
-                                    <img v-else :src="model.cover.path" alt="">
+                                <div class="text-center">
+                                    <img style="max-width: 300px" v-if="model.cover.optimized"  :src="model.cover.medium" alt="">
+                                    <img style="max-width: 300px" v-else :src="model.cover.path" alt="">
                                 </div>
 
                                 <div class="py-3">
@@ -65,82 +64,77 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="d-flex justify-content-between mt-3">
-                                    <router-link :to="`/library/albums/${$route.params.id}/edit`" class="btn  btn-primary btn-sm"><i class="mdi mdi-pencil mr-2"></i>Edit</router-link>
-                                    <button @click="remove()" class="btn  btn-primary btn-sm"><i class="mdi mdi-delete mr-2"></i>Delete</button>
-                                    <button class="btn  btn-primary btn-sm"><i class="mdi mdi-cart mr-2"></i>Cart</button>
-                                </div>
                             </div>
 
-                            <div class="release__list">
+                            <div class="col-lg-8">
+                                <div class="p-border-light rounded">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-end">
+                                            <router-link :to="`/library/albums/${$route.params.id}/edit`" class="btn  btn-primary px-5 mr-3"><i class="mdi mdi-pencil mr-2"></i>Edit</router-link>
+                                            <button class="btn  btn-primary px-5 mr-3"><i class="mdi mdi-cart mr-2"></i>Add To Cart</button>
+                                            <button @click="remove()" class="btn  btn-danger mr-3"><i class="mdi mdi-delete mr-2"></i>Delete</button>
+                                        </div>
+                                    </div>
 
-                                <table class="main__table">
-                                    <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr v-for="row in songs">
-                                        <td>
-                                            <div class="main__table-text text-primary">
-                                                #{{ row.id }}
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="main__table-img">
-                                                <img v-if="row.cover.optimized" :src="row.cover.small" alt="">
-                                                <img v-else :src="row.cover.path" alt="">
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="main__table-text">
-                                                {{ row.song_title }} <br>
-                                                {{ row.album_title }}
-                                            </div>
-                                        </td>
-                                        <td class="text-wrap">
-                                            <div class="main__table-text">
+                                    <table class="main__table">
+                                        <tbody>
+                                        <tr v-for="row in songs">
+                                            <td class="px-2"></td>
+                                            <td>
+                                                <div class="main__table-text text-primary">
+                                                    #{{ row.id }}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="main__table-img">
+                                                    <img v-if="row.cover.optimized" :src="row.cover.small" alt="">
+                                                    <img v-else :src="row.cover.path" alt="">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="main__table-text">
+                                                    {{ row.song_title }} <br>
+                                                    {{ row.album_title }}
+                                                </div>
+                                            </td>
+                                            <td class="text-wrap">
+                                                <div class="main__table-text">
                                             <span v-for="item in row.genre" class="badge badge-light mr-2">
                                                 {{ item.name }}
                                             </span>
-                                            </div>
-                                        </td>
-                                        <td class="text-wrap">
-                                            <div class="main__table-text">
+                                                </div>
+                                            </td>
+                                            <td class="text-wrap">
+                                                <div class="main__table-text">
                                             <span v-for="item in row.language" class="badge badge-light mr-2">
                                                 {{ item.name }}
                                             </span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="main__table-text main__table-text--price">
-                                                {{ row.description | string_limit }} <br>
-                                                {{ row.province.name }}
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="main__table-text">
-                                                {{ row.created_at }}
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="d-flex justify-content-center align-items-center">
-                                                <router-link :to="`/library/songs/${row.id}/view`" class="single-item__export mr-3" type="button">
-                                                    <i class="mdi mdi-eye mdi-24px"></i>
-                                                </router-link>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="main__table-text main__table-text--price">
+                                                    {{ row.description | string_limit }} <br>
+                                                    {{ row.province.name }}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="main__table-text">
+                                                    {{ row.created_at }}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex justify-content-center align-items-center">
+                                                    <router-link :to="`/library/songs/${row.id}/view`" class="single-item__export mr-3" type="button">
+                                                        <i class="mdi mdi-eye mdi-24px"></i>
+                                                    </router-link>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
                             </div>
                         </div>
 
@@ -172,10 +166,8 @@
 
             remove()
             {
-                this.loading = true;
                 window.action('Delete' , 'Album' , `${window.location.origin}/site/library/albums/${this.$route.params.id}/delete`).then((response) => {
-                    this.loading = false;
-                    this.$router.push(`/library/albums`);
+                    this.$router.back();
                 });
             },
 

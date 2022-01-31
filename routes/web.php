@@ -69,6 +69,8 @@ Route::middleware('auth')->group(function (){
             Route::get('/songs' , [SongController::class , 'index']);
             Route::get('/songs/{model}/view' , [SongController::class , 'view']);
             Route::post('/songs/{model}/edit' , [SongController::class , 'edit']);
+            Route::get('/songs/{model}/delete' , [SongController::class , 'delete']);
+            Route::get('/songs/{model}/cart' , [SongController::class , 'cart']);
 
             Route::post('/profile/edit' , [ProfileController::class , 'update']);
             Route::post('/profile/image' , [ProfileController::class , 'image']);

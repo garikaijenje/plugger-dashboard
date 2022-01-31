@@ -7,9 +7,13 @@ window.action = function (action , name , url ) {
             showCancelButton: true,
             confirmButtonColor: '#6200EE',
             cancelButtonColor: '#d33',
+            customClass : {
+                title: 'swal2-title'
+            },
             confirmButtonText: `Yes, ${action.replace('-' , ' ')}!`
         }).then((result) => {
-            if (result.value) {
+            if (result.value)
+            {
                 window.axios.get(url).then((response) => {
                     window.alerts.success(response).then((response) => {
                         resolve(response);

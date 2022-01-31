@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Album;
+use App\Cart;
 use App\filters\AlbumFilter;
 use App\filters\SongFilter;
 use App\Image;
@@ -225,6 +226,26 @@ class SongController extends Controller
     {
         $model->load(['cover' , 'genre' , 'language' , 'province']);
         return api()->data('model', $model)->build();
+    }
+
+
+    public function cart(Song $model)
+    {
+
+        $cart = Cart::query()->updateOrCreate([
+            'user_id' => auth()->id(),
+            'state' => 'PENDING',
+        ]);
+
+        $model->load(['cover' , 'genre' , 'language' , 'province']);
+        return api()->data('model', $model)->build("Song was successfully added to Cart");
+    }
+
+
+    public function delete(Song $model)
+    {
+        $model->delete();
+        return api()->build("Song was successfully deleted");
     }
 
 }

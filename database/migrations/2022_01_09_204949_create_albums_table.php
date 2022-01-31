@@ -21,6 +21,7 @@ class CreateAlbumsTable extends Migration
             $table->bigInteger('user_id')->nullable();
             $table->bigInteger('province_id')->nullable();
             $table->text('description')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

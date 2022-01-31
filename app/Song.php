@@ -4,13 +4,14 @@ namespace App;
 
 use App\Core\DefaultModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * @property mixed id
  */
 class Song extends DefaultModel
 {
-    use HasFactory;
+    use HasFactory , SoftDeletes;
 
 
     protected $with = ['genre' , 'language' , 'cover' , 'province' , 'state'];
