@@ -43,7 +43,6 @@ const routes = [
         component : require('../components/webiste/cart').default,
     },
 
-
     {
         path : '/upload/album',
         component : require('../components/webiste/upload/album').default,
@@ -61,6 +60,18 @@ const routes = [
         path : '/library/albums/:id/edit',
         component : require('../components/webiste/album/edit').default,
     },
+
+
+    {
+        path : '/library/payments',
+        component : require('../components/webiste/payments/index').default,
+    },
+
+    {
+        path : '/library/payments/:id/view',
+        component : require('../components/webiste/payments/view').default,
+    },
+
 
 
     {

@@ -79,6 +79,8 @@ class CartController extends Controller
                     'ref' => $code,
                     'cart_id' => $cart->id,
                     'cart_ref' => $cart->ref,
+                    'user_id' => $auth->id,
+                    'state' => 'PENDING'
                 ]);
 
                 foreach ($cart->items as $item)
