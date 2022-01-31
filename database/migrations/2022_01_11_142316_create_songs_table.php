@@ -39,11 +39,13 @@ class CreateSongsTable extends Migration
 
             $table->string('song_path')->nullable();
             $table->string('song_name')->nullable();
+            $table->boolean('is_in_cart')->default(false);
             $table->string('video_path')->nullable();
             $table->string('video_name')->nullable();
 
             $table->integer('track_number')->nullable();
             $table->bigInteger('album_id')->nullable();
+            $table->bigInteger('payment_id')->nullable();
             $table->bigInteger('user_id')->nullable();
             $table->bigInteger('province_id')->nullable();
             $table->timestamp('release_date')->nullable();

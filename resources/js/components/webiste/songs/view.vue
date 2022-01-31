@@ -24,8 +24,8 @@
                             <div class="col-lg-9">
                                 <div class="card-body mh-50vh">
                                     <div class="d-flex align-items-center">
-                                        <h5 class="m-0 text-capitalize text-white"> SONG INFORMATION</h5>
-                                        <button @click="cart" class="btn btn-primary ml-auto mr-2"><i class="mdi mdi-cart mr-2"></i>Cart</button>
+                                        <h5 class="m-0 text-capitalize text-white mr-auto"> SONG INFORMATION</h5>
+                                        <button v-if="!model.is_in_cart" @click="cart" class="btn btn-primary mr-2"><i class="mdi mdi-cart mr-2"></i>Cart</button>
                                         <router-link :to="`/library/songs/${$route.params.id}/edit`" class="btn btn-primary mr-2"><i class="mdi mdi-pencil mr-2"></i>Edit Song</router-link>
                                         <a target="_blank" :href="`/site/library/songs/${$route.params.id}/download`" class="btn btn-primary mr-2"><i class="mdi mdi-download mr-2"></i>Download Song</a>
                                         <a target="_blank" :href="`/site/library/songs/${$route.params.id}/instrumental`" class="btn btn-primary mr-2"><i class="mdi mdi-download mr-2"></i>Download Instrumental</a>
@@ -103,7 +103,7 @@
             cart()
             {
                 window.action('add' , 'Song to cart' , `${window.location.origin}/site/library/songs/${this.$route.params.id}/cart`).then((response) => {
-
+                    this.init();
                 });
             },
 

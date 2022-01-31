@@ -38,6 +38,11 @@ const routes = [
         component : require('../components/webiste/upload').default,
     },
 
+    {
+        path : '/cart',
+        component : require('../components/webiste/cart').default,
+    },
+
 
     {
         path : '/upload/album',

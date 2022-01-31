@@ -2,7 +2,7 @@ window.action = function (action , name , url ) {
     return new Promise((resolve, reject) => {
         window.Swal.fire({
             title: 'Are you sure?',
-            text: `You want to ${action.replace('-' , ' ')} this ${name}!`,
+            text: `You want to ${action.replace('-' , ' ')} this ${name} !`,
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#6200EE',

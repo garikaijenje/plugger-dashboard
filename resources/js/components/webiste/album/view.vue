@@ -71,7 +71,7 @@
                                     <div class="card-body">
                                         <div class="d-flex justify-content-end">
                                             <router-link :to="`/library/albums/${$route.params.id}/edit`" class="btn  btn-primary px-5 mr-3"><i class="mdi mdi-pencil mr-2"></i>Edit</router-link>
-                                            <button class="btn  btn-primary px-5 mr-3"><i class="mdi mdi-cart mr-2"></i>Add To Cart</button>
+                                            <button @click="cart" class="btn  btn-primary px-5 mr-3"><i class="mdi mdi-cart mr-2"></i>Add To Cart</button>
                                             <button @click="remove()" class="btn  btn-danger mr-3"><i class="mdi mdi-delete mr-2"></i>Delete</button>
                                         </div>
                                     </div>
@@ -163,6 +163,14 @@
             };
         },
         methods : {
+
+            cart()
+            {
+                window.action('add' , 'Album to cart' , `${window.location.origin}/site/library/albums/${this.$route.params.id}/cart`).then((response) => {
+                    this.init();
+                    this.loadSongs();
+                });
+            },
 
             remove()
             {

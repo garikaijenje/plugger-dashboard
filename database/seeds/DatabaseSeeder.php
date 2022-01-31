@@ -12,6 +12,7 @@ use App\User;
 use Faker\Factory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
@@ -28,6 +29,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Model::unguard();
+
+        Artisan::call("seed:system");
 
         // Users
 
@@ -192,7 +195,7 @@ class DatabaseSeeder extends Seeder
              ]);
 
 
-            for ($a = 1 ; $a <= 10 ; $a++)
+            for ($a = 1 ; $a <= 2 ; $a++)
             {
                 echo  $i.$a.PHP_EOL;
 
@@ -227,7 +230,7 @@ class DatabaseSeeder extends Seeder
 
                 // Songs
 
-                for ($b = 1 ; $b <= 15 ; $b++)
+                for ($b = 1 ; $b <= 3 ; $b++)
                 {
                     echo $i . $a . $b . PHP_EOL;
 
@@ -276,6 +279,7 @@ class DatabaseSeeder extends Seeder
                         'optimized' => false,
                         'key' => 'song-cover'
                     ]);
+
                 }
             }
         }

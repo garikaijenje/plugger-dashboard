@@ -38,10 +38,10 @@
             </div>
         </div>
        <div class="col-12">
-           <div class="dashbox">
-                    <div class="dashbox__table-wrap">
-                        <div class="dashbox__table-scroll">
-                            <table class="main__table">
+           <div class="">
+                    <div class="">
+                        <div class="">
+                            <table class="main__table mt-4">
                                 <thead>
                                 <tr>
                                     <th></th>

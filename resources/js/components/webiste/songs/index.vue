@@ -15,7 +15,7 @@
                         <button type="button"><i class="mdi mdi-magnify text-white mdi-18px"></i></button>
                     </form>
                 </div>
-                <div class="ml-auto d-flex align-items-center">
+                <div class="ml-auto d-flex align-items-center flex-wrap">
                     <div class="mr-3 text-white">Showing </div>
                     <select @change="data.fetch()" v-model="data.filters.size" style="width: auto;height: 35px" class="sign__input mr-3">
                         <option value="10">10</option>
@@ -38,10 +38,10 @@
             </div>
         </div>
        <div class="col-12">
-           <div class="dashbox">
-                    <div class="dashbox__table-wrap">
-                        <div class="dashbox__table-scroll">
-                            <table class="main__table">
+           <div class="">
+                    <div class="">
+                        <div class="">
+                            <table class="main__table mt-4">
                                 <thead>
                                 <tr>
                                     <th></th>

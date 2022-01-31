@@ -6,13 +6,6 @@
                 <img style="height: 40px;width: auto" src="{{ asset('images/plugger-logo-1-white.png') }}" alt="">
             </a>
         </div>
-            <nav class="header__nav">
-                @if (auth()->check())
-                    <router-link to="/profile"> <i class="mdi mdi-account mr-2 mdi-18px"></i> Profile</router-link>
-                    <router-link to="/upload"> <i class="mdi mdi-cloud-upload mr-2 mdi-18px"></i> Upload Music</router-link>
-                    <a href="/admin" target="_blank"> <i class="mdi mdi-monitor-dashboard mr-2 mdi-18px"></i> Admin</a>
-                @endif
-            </nav>
         <form action="#" class="header__search">
             <input type="text" placeholder="Artist, track or podcast">
             <button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.71,20.29,18,16.61A9,9,0,1,0,16.61,18l3.68,3.68a1,1,0,0,0,1.42,0A1,1,0,0,0,21.71,20.29ZM11,18a7,7,0,1,1,7-7A7,7,0,0,1,11,18Z"/></svg></button>
@@ -94,11 +87,22 @@
         </li>
 
         @if (auth()->check())
-
             <li class="sidebar__nav-item p-border-light-top mt-5 pt-5">
                 <a href="#" class="sidebar__nav-link">
                     <i></i> <span>MY LIBRARY</span>
                 </a>
+            </li>
+
+            <li class="sidebar__nav-item">
+                <router-link exact to="/cart" class="sidebar__nav-link">
+                    <i class="mdi mdi-cart mr-2 mdi-18px"></i> Cart
+                </router-link>
+            </li>
+
+            <li class="sidebar__nav-item">
+                <router-link exact to="/upload" class="sidebar__nav-link">
+                    <i class="mdi mdi-upload mr-2 mdi-18px"></i> Upload
+                </router-link>
             </li>
 
             <li class="sidebar__nav-item">
@@ -117,6 +121,17 @@
                 <router-link exact to="/library/songs" class="sidebar__nav-link">
                     <i class="mdi  mdi-music-note mdi-18px mr-2"></i> <span>Songs</span>
                 </router-link>
+            </li>
+
+            <li class="sidebar__nav-item">
+                <router-link exact to="/library/payments" class="sidebar__nav-link">
+                    <i class="mdi  mdi-cash-marker mdi-18px mr-2"></i> <span>Payments</span>
+                </router-link>
+            </li>
+            <li class="sidebar__nav-item">
+                <a href="/admin" class="sidebar__nav-link" target="_blank">
+                    <i class="mdi mdi-monitor-dashboard mr-2 mdi-18px"></i> Admin
+                </a>
             </li>
 
         @endif

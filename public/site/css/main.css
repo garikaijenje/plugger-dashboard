@@ -811,7 +811,7 @@ body::-webkit-scrollbar-thumb {
   position: relative;
   padding: 30px 0 0;
   width: 100%;
-  max-height: calc(100vh - 150px);
+  /*max-height: calc(100vh - 150px);*/
   overflow-y: auto;
 }
 .sidebar__nav-link {
@@ -954,7 +954,7 @@ body::-webkit-scrollbar-thumb {
     transform: translateX(0);
   }
   .sidebar__nav {
-    max-height: calc(100vh - 332px);
+    /*max-height: calc(100vh - 332px);*/
   }
 }
 /*==============================

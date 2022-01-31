@@ -5,6 +5,7 @@ use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\AuditController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ConfigurationController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\HomeController;
@@ -64,6 +65,7 @@ Route::middleware('auth')->group(function (){
             Route::get('/albums/{model}/songs' , [AlbumController::class , 'songs']);
             Route::get('/albums/{model}/delete' , [AlbumController::class , 'delete']);
             Route::post('/albums/{model}/edit' , [AlbumController::class , 'update']);
+            Route::get('/albums/{model}/cart' , [AlbumController::class , 'cart']);
 
             Route::post('/songs' , [SongController::class , 'create']);
             Route::get('/songs' , [SongController::class , 'index']);
@@ -75,6 +77,10 @@ Route::middleware('auth')->group(function (){
             Route::post('/profile/edit' , [ProfileController::class , 'update']);
             Route::post('/profile/image' , [ProfileController::class , 'image']);
             Route::post('/artist/edit' , [ArtistController::class , 'update']);
+
+
+            Route::get('/cart' , [CartController::class , 'view']);
+            Route::get('/cart/payment' , [CartController::class , 'payment']);
         });
     });
 });

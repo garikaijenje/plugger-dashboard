@@ -6,6 +6,9 @@ use App\Core\DefaultModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+/**
+ * @property mixed songs
+ */
 class Album extends DefaultModel
 {
     use HasFactory , SoftDeletes;

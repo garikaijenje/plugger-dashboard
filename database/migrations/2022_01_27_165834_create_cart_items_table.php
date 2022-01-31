@@ -15,8 +15,9 @@ class CreateCartItemsTable extends Migration
     {
         Schema::create('cart_items', function (Blueprint $table) {
             $table->id();
-            $table->morphs('cart');
+            $table->morphs('item');
             $table->double('price')->nullable();
+            $table->bigInteger('cart_id');
             $table->timestamps();
         });
     }

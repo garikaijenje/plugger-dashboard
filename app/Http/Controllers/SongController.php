@@ -4,11 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Album;
 use App\Cart;
+use App\CartItem;
 use App\filters\AlbumFilter;
 use App\filters\SongFilter;
 use App\Image;
 use App\Jobs\OptimizeImage;
+use App\Service\System;
 use App\Song;
+use Exception;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class SongController extends Controller
@@ -229,13 +233,47 @@ class SongController extends Controller
     }
 
 
+    /**
+     * @param Song $model
+     * @return JsonResponse
+     * @throws Exception
+     */
     public function cart(Song $model)
     {
+        $auth = auth()->user();
+        $cart =  Cart::query()
+            ->where('user_id' , $auth->id)
+            ->where('state' , 'PENDING')->first();
 
-        $cart = Cart::query()->updateOrCreate([
-            'user_id' => auth()->id(),
-            'state' => 'PENDING',
-        ]);
+        if (!$cart)
+        {
+            $cart =  Cart::query()->create([
+                'user_id' => $auth->id,
+                'state' => 'PENDING',
+                'ref' => uniqid() . "." . uniqid()
+            ]);
+        }
+
+        if (!CartItem::query()
+            ->where('cart_id' , $cart->id)
+            ->where('item_type' , Song::class)
+            ->where('item_id' , $model->id)
+            ->exists()
+        ){
+            $price =  System::value('SONG-PUBLISH-PRICE');
+
+            CartItem::query()->create([
+                'cart_id' => $cart->id,
+                'item_type' => Song::class,
+                'item_id' => $model->id,
+                'price' => $price
+            ]);
+
+            $model->update([
+                'is_in_cart' => true
+            ]);
+
+        }
 
         $model->load(['cover' , 'genre' , 'language' , 'province']);
         return api()->data('model', $model)->build("Song was successfully added to Cart");

@@ -3,10 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Album;
+use App\Cart;
+use App\CartItem;
 use App\filters\AlbumFilter;
 use App\Image;
 use App\Jobs\OptimizeImage;
+use App\Service\System;
 use App\Song;
+use Exception;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class AlbumController extends Controller
@@ -149,9 +154,62 @@ class AlbumController extends Controller
         return api()->data('songs', $songs)->build();
     }
 
+
+    /**
+     * @param Album $model
+     * @return JsonResponse
+     * @throws Exception
+     */
+    public function cart(Album $model)
+    {
+        $auth = auth()->user();
+        $album = $model;
+        $songs = $album->songs;
+
+        $cart =  Cart::query()
+            ->where('user_id' , $auth->id)
+            ->where('state' , 'PENDING')->first();
+
+        if (!$cart)
+        {
+            $cart =  Cart::query()->create([
+                'user_id' => $auth->id,
+                'state' => 'PENDING',
+                'ref' => uniqid() . "." . uniqid()
+            ]);
+        }
+
+
+        $price =  System::value('SONG-PUBLISH-PRICE');
+
+        foreach ($songs as $model)
+        {
+            if (!CartItem::query()
+                ->where('cart_id' , $cart->id)
+                ->where('item_type' , Song::class)
+                ->where('item_id' , $model->id)
+                ->exists()
+            ){
+                CartItem::query()->create([
+                    'cart_id' => $cart->id,
+                    'item_type' => Song::class,
+                    'item_id' => $model->id,
+                    'price' => $price
+                ]);
+
+                $model->update([
+                    'is_in_cart' => true
+                ]);
+            }
+        }
+
+        return api()->data('model', $album)->build("Album was successfully added to Cart");
+    }
+
+
     public function delete(Album $model)
     {
-        $songs = $model->songs();
+        $songs = $model->songs;
 
         foreach ($songs as $song)
         {

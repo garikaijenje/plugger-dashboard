@@ -4,5 +4,6 @@
 return [
 
     // Elastic Host
-    'example' => env('ECONET_USER_NAME' , ''),
+    'id' => env('PAYNOW_ID', ''),
+    'key' => env('PAYNOW_KEY', ''),
 ];
