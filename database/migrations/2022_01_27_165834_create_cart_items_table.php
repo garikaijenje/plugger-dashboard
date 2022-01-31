@@ -18,6 +18,7 @@ class CreateCartItemsTable extends Migration
             $table->morphs('item');
             $table->double('price')->nullable();
             $table->bigInteger('cart_id');
+            $table->bigInteger('payment_id')->nullable();
             $table->timestamps();
         });
     }

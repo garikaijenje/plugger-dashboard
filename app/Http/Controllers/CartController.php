@@ -81,9 +81,12 @@ class CartController extends Controller
                     'cart_ref' => $cart->ref,
                 ]);
 
-                $cart->items()->update([
-                    'payment_id' => $payment->id
-                ]);
+                foreach ($cart->items as $item)
+                {
+                    $item->item->update([
+                        'payment_id' => $payment->id
+                    ]);
+                }
 
                 $link = $response->redirectUrl();
                 $pollUrl = $response->pollUrl();
