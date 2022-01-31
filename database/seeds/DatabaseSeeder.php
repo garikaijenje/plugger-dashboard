@@ -139,9 +139,8 @@ class DatabaseSeeder extends Seeder
 
         $states = [
             ['01' , 'Uploaded'],
-            ['02' , 'Waiting Admin approval'],
-            ['03' , 'Waiting ZIMURA approval'],
-            ['04' , 'Published'],
+            ['02' , 'Waiting admin approval'],
+            ['03' , 'Published'],
         ];
 
         foreach ($states as $state)

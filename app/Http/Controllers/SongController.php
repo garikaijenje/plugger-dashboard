@@ -240,6 +240,12 @@ class SongController extends Controller
      */
     public function cart(Song $model)
     {
+        if ($model->state_code !== "01")
+        {
+            $model->load(['cover' , 'genre' , 'language' , 'province']);
+            return api()->data('model', $model)->build("Song already submitted");
+        }
+
         $auth = auth()->user();
         $cart =  Cart::query()
             ->where('user_id' , $auth->id)

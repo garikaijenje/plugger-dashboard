@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * @property mixed id
+ * @property mixed state_code
  */
 class Song extends DefaultModel
 {

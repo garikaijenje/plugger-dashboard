@@ -4,7 +4,7 @@
             <ul class="breadcrumb bg-transparent">
                 <li class="breadcrumb__item"><router-link to="/">Home</router-link></li>
                 <li class="breadcrumb__item">My Library</li>
-                <li class="breadcrumb__item breadcrumb__item--active">Albums</li>
+                <li class="breadcrumb__item breadcrumb__item--active">Payments</li>
             </ul>
         </div>
         <div class="col-12">
@@ -45,14 +45,15 @@
                                 <thead>
                                 <tr>
                                     <th></th>
-                                    <th></th>
+                                    <th>State</th>
+                                    <th>Amount</th>
+                                    <th>Ref</th>
                                     <th>Name</th>
-                                    <th>Artist</th>
-                                    <th>Genre</th>
-                                    <th>Language</th>
-                                    <th>Province</th>
-                                    <th>Description</th>
-                                    <th>Date</th>
+                                    <th>Phone</th>
+                                    <th>Email</th>
+                                    <th>Date Created</th>
+                                    <th>Date Completed</th>
+                                    <th></th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -63,40 +64,22 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="main__table-img">
-                                            <img v-if="row.cover.optimized" :src="row.cover.small" alt="">
-                                            <img v-else :src="row.cover.path" alt="">
-                                        </div>
+                                        <div class="main__table-text">{{ row.state }}</div>
+                                    </td>
+                                    <td>
+                                        <div class="main__table-text">{{ row.amount }}</div>
+                                    </td>
+                                    <td>
+                                        <div class="main__table-text">{{ row.ref }}</div>
                                     </td>
                                     <td>
                                         <div class="main__table-text">{{ row.name }}</div>
                                     </td>
                                     <td>
-                                        <div class="main__table-text">{{ row.artist }}</div>
-                                    </td>
-                                    <td class="text-wrap">
-                                        <div class="main__table-text">
-                                            <span v-for="item in row.genre" class="badge badge-light mr-2">
-                                                {{ item.name }}
-                                            </span>
-                                        </div>
-                                    </td>
-                                    <td class="text-wrap">
-                                        <div class="main__table-text">
-                                            <span v-for="item in row.language" class="badge badge-light mr-2">
-                                                {{ item.name }}
-                                            </span>
-                                        </div>
+                                        <div class="main__table-text">{{ row.phone }}</div>
                                     </td>
                                     <td>
-                                        <div class="main__table-text main__table-text--price">
-                                            {{ row.province.name }}
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="main__table-text main__table-text--price">
-                                            {{ row.description | string_limit }}
-                                        </div>
+                                        <div class="main__table-text">{{ row.email }}</div>
                                     </td>
                                     <td>
                                         <div class="main__table-text">
@@ -104,8 +87,13 @@
                                         </div>
                                     </td>
                                     <td>
+                                        <div class="main__table-text">
+                                            {{ row.completed_at }}
+                                        </div>
+                                    </td>
+                                    <td>
                                         <div class="d-flex justify-content-center align-items-center">
-                                            <router-link :to="`/library/albums/${row.id}/view`" class="single-item__export mr-3" type="button">
+                                            <router-link :to="`/library/payments/${row.id}/view`" class="single-item__export mr-3" type="button">
                                                 <i class="mdi mdi-eye mdi-24px"></i>
                                             </router-link>
                                         </div>
@@ -131,7 +119,7 @@
         data(){
             return {
                 data :  new Data({
-                    url : '/site/library/albums',
+                    url : '/site/library/payments',
                     prefix : 'list'
                 })
             };

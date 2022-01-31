@@ -16,6 +16,7 @@ class CreatePaymentsTable extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->string('state')->nullable();
+            $table->double('amount')->nullable();
             $table->string('cart_ref')->nullable();
             $table->string('ref')->nullable();
             $table->bigInteger('cart_id')->nullable();
@@ -26,6 +27,7 @@ class CreatePaymentsTable extends Migration
             $table->text('link')->nullable();
             $table->text('poll_link')->nullable();
             $table->text('meta')->nullable();
+            $table->timestamp('completed_at')->nullable();
             $table->timestamps();
         });
     }

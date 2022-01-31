@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cart;
+use App\Jobs\ConfirmPaynowTransaction;
 use App\Payments;
 use Illuminate\Http\Request;
 use Paynow\Http\ConnectionException;
@@ -37,6 +38,18 @@ class CartController extends Controller
 
     }
 
+    public function confirm(Request $request)
+    {
+        $code = $request->get('code');
+        $payment =  Payments::query()->where('ref' , '=' , $code)->first();
+        if ($payment)
+        {
+           $this->dispatch(new ConfirmPaynowTransaction($payment));
+           return redirect(config('app.url') . "/?context=paynow&id={$payment->id}");
+        }
+        return redirect(config('app.url'));
+    }
+
 
     public function payment(Request $request)
     {
@@ -65,7 +78,7 @@ class CartController extends Controller
             config('app.url').'/paynow/callback?code=' . $code
         );
 
-        $payment = $paynow->createPayment('Invoice #' . $cart->id , $cart->email ? $cart->email : $auth->email);
+        $payment = $paynow->createPayment('Invoice #' . $cart->id ,  $request->get('email') ?  $request->get('email') : $auth->email);
         $payment->add('Invoice', $total);
         try {
 
@@ -80,7 +93,8 @@ class CartController extends Controller
                     'cart_id' => $cart->id,
                     'cart_ref' => $cart->ref,
                     'user_id' => $auth->id,
-                    'state' => 'PENDING'
+                    'state' => 'PENDING',
+                    'amount' =>  $total
                 ]);
 
                 foreach ($cart->items as $item)

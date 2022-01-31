@@ -184,6 +184,11 @@ class AlbumController extends Controller
 
         foreach ($songs as $model)
         {
+            if ($model->state_code !== "01")
+            {
+                continue;
+            }
+
             if (!CartItem::query()
                 ->where('cart_id' , $cart->id)
                 ->where('item_type' , Song::class)

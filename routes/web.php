@@ -10,6 +10,7 @@ use App\Http\Controllers\ConfigurationController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProvinceController;
@@ -49,11 +50,12 @@ Route::post('/logout' , [AuthController::class , 'logout'])->name('logout');
 Route::get('/reset' , [AuthController::class , 'getResetForm']);
 Route::post('/password/reset' , [AuthController::class , 'reset']);
 Route::post('/reset' , [AuthController::class , 'resetPassword']);
-
-
 Route::get('/genre/list' , [GenreController::class , 'list']);
 Route::get('/province/list' , [ProvinceController::class , 'list']);
 Route::get('/language/list' , [LanguageController::class , 'list']);
+
+Route::get('/paynow/callback' , [CartController::class , 'confirm']);
+
 
 Route::middleware('auth')->group(function (){
     Route::prefix('site')->group(function (){
@@ -81,6 +83,9 @@ Route::middleware('auth')->group(function (){
 
             Route::get('/cart' , [CartController::class , 'view']);
             Route::get('/cart/payment' , [CartController::class , 'payment']);
+
+
+            Route::get('/payments' , [PaymentController::class , 'index']);
         });
     });
 });
