@@ -1,11 +1,13 @@
 import Vue from "vue";
 import router from "./routes/core/engine";
 import { Plugin } from 'vue-fragment';
-import VueMeta from 'vue-meta'
-import Vuex from 'vuex'
+import VueMeta from 'vue-meta';
+import Vuex from 'vuex';
+import AudioVisual from 'vue-audio-visual';
 Vue.use(VueMeta);
 Vue.use(Vuex);
 Vue.use(Plugin);
+Vue.use(AudioVisual);
 
 
 require('./boot/axios');

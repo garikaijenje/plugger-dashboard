@@ -27,6 +27,7 @@
         "stripe": "^8.176.0",
         "sweetalert2": "^11.3.10",
         "vue": "^2.6.11",
+        "vue-audio-visual": "^2.2.2",
         "vue-fragment": "^1.5.1",
         "vue-meta": "^2.4.0",
         "vue-multiselect": "^2.1.6",

@@ -16,9 +16,23 @@
                     <div class="dimmer-content">
                         <div class="col-lg-12 row align-items-center p-border-light rounded card-body">
                             <div class="col-lg-3">
-                                <div class="">
-                                    <img style="max-width: 300px" v-if="model.cover.optimized"  :src="model.cover.medium" alt="">
-                                    <img style="max-width: 300px" v-else :src="model.cover.path" alt="">
+                                <div v-if="model.song_path">
+                                    <av-circle class="text-center"
+                                            :outline-width="0"
+                                            :progress-width="5"
+                                            :outline-meter-space="5"
+                                            :playtime="true"
+                                            :canv-top="true"
+                                            progress-color="#6200EE"
+                                            bar-color="#6200EE"
+                                            playtime-color="#6200EE"
+                                            playtime-font="18px Monaco"
+                                            :audio-src="model.song_path"
+                                    ></av-circle>
+                                </div>
+                                <div class="mt-3 text-center">
+                                    <img style="max-width: 250px" v-if="model.cover.optimized"  :src="model.cover.medium" alt="">
+                                    <img style="max-width: 250px" v-else :src="model.cover.path" alt="">
                                 </div>
                             </div>
                             <div class="col-lg-9">
@@ -31,6 +45,7 @@
                                         <a target="_blank" :href="`/site/library/songs/${$route.params.id}/instrumental`" class="btn btn-primary mr-2"><i class="mdi mdi-download mr-2"></i>Download Instrumental</a>
                                         <button @click="remove()" class="btn btn-danger mr-2 "><i class="mdi mdi-trash-can mr-2"></i>Delete</button>
                                     </div>
+
                                     <div class="mt-5 text-white row">
                                         <p class="col-6"><span>Name : </span> <strong>{{ model.song_title}}</strong> </p>
                                         <p class="col-6"><span>Artist : </span> <strong>{{ model.artist_name}}</strong> </p>
