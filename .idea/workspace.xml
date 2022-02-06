@@ -2,75 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06da2c1a-3a13-4195-b331-663021fe4abd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/components/core/player.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/prince.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/prince.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/201.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/201.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/201.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/201.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/272.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/272.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/272.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/272.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/291.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/291.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/291.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/291.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/294.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/294.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/294.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/294.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/309.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/309.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/309.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/309.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/490.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/490.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/490.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/490.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/698.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/698.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/698.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/698.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/7.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/7.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/7.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/7.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/742.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/742.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/742.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/742.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/752.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/752.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/752.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/752.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/765.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/765.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/765.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/765.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/778.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/778.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/778.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/778.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/82.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/82.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/82.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/82.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js.LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js.LICENSE.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_auth_Login_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_auth_Login_vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_auth_Register_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_auth_Register_vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_auth_Reset_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_auth_Reset_vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_configuration_edit_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_configuration_edit_vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_configuration_index_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_configuration_index_vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_configuration_open_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_configuration_open_vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_configuration_view_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_configuration_view_vue.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_genre_create_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_genre_create_vue.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_genre_edit_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_genre_edit_vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_genre_index_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_genre_index_vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_genre_open_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_genre_open_vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_genre_view_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_genre_view_vue.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_language_create_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_language_create_vue.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_language_edit_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_language_edit_vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_language_index_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_language_index_vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_language_open_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_language_open_vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_language_view_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_language_view_vue.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_province_create_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_province_create_vue.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_province_edit_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_province_edit_vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_province_index_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_province_index_vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_province_open_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_province_open_vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_province_view_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_province_view_vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_settings_open_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_settings_open_vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_settings_password_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_settings_password_vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_settings_profile_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_settings_profile_vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_users_create_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_users_create_vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_users_edit_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_users_edit_vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_users_index_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_users_index_vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_users_open_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_users_open_vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/resources_js_components_users_view_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/resources_js_components_users_view_vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/genre/form.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/genre/form.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/language/form.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/language/form.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/province/form.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/province/form.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/webiste/cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/webiste/cart.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/core/player.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/core/player.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/webiste/songs/view.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/webiste/songs/view.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -132,39 +73,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
-              <folding>
-                <element signature="e#0#22#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/routes/core/engine.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="86">
-              <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/js/components/users/view.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
@@ -176,21 +84,46 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/js/components/webiste/songs/view.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="38" column="63" selection-start-line="38" selection-start-column="63" selection-end-line="38" selection-end-column="63" />
+            <state relative-caret-position="345">
+              <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
               <folding>
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/js/components/core/player.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="113">
+              <caret line="100" selection-start-line="100" selection-end-line="100" />
+              <folding>
+                <element signature="n#style#0;n#audio#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="e#5293#11484#0" />
+                <element signature="e#5855#9101#0" />
+                <element signature="e#7747#10093#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/site.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="30" column="20" lean-forward="true" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/js/components/webiste/cart.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="38" column="61" lean-forward="true" selection-start-line="38" selection-start-column="61" selection-end-line="38" selection-end-column="61" />
+            <state relative-caret-position="166">
+              <caret line="35" column="46" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" />
               </folding>
@@ -272,7 +205,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/js/components/webiste/profile.vue" />
         <option value="$PROJECT_DIR$/resources/views/includes/footer.blade.php" />
         <option value="$PROJECT_DIR$/public/site/js/main.js" />
         <option value="$PROJECT_DIR$/resources/js/components/webiste/upload/album.vue" />
@@ -315,14 +247,15 @@
         <option value="$PROJECT_DIR$/resources/js/components/webiste/home.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/webiste/payments/index.vue" />
         <option value="$PROJECT_DIR$/resources/js/routes/welcome.js" />
-        <option value="$PROJECT_DIR$/resources/js/components/core/player.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/province/form.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/language/form.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/genre/form.vue" />
         <option value="$PROJECT_DIR$/resources/js/routes/core/engine.js" />
         <option value="$PROJECT_DIR$/resources/js/app.js" />
-        <option value="$PROJECT_DIR$/resources/js/components/webiste/songs/view.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/webiste/cart.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/webiste/songs/view.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/core/player.vue" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/site.blade.php" />
       </list>
     </option>
   </component>
@@ -474,7 +407,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -512,6 +444,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -610,12 +543,14 @@
       <workItem from="1643618304345" duration="139000" />
       <workItem from="1643619396549" duration="16581000" />
       <workItem from="1643647682977" duration="9439000" />
-      <workItem from="1643787730377" duration="7961000" />
+      <workItem from="1643787730377" duration="8513000" />
+      <workItem from="1644090907036" duration="840000" />
+      <workItem from="1644140134960" duration="5972000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="230560000" />
+    <option name="totallyTimeSpent" value="237924000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="33" width="1920" height="1019" extended-state="6" />
@@ -627,16 +562,16 @@
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946752" weight="0.5324232" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946752" visible="true" weight="0.034129694" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32992035" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50106835" side_tool="true" weight="0.14334472" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49893162" visible="true" weight="0.100113764" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49893162" weight="0.034129694" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.37612614" />
       <window_info anchor="bottom" id="TypeScript" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -651,20 +586,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/system.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Core/DefaultModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="17" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2022_01_11_142400_create_carts_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -942,9 +863,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/core/player.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/province/form.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -966,14 +884,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/boot/axios.js">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/resources/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/boot/alerts.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/boot/filters.js">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/resources/js/routes/core/engine.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/boot/helpers.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -982,30 +911,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/routes/core/engine.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/resources/js/boot/filters.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/app.js">
+    <entry file="file://$PROJECT_DIR$/resources/js/boot/alerts.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/boot/axios.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/webiste/cart.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="166">
+          <caret line="35" column="46" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
           <folding>
-            <element signature="e#0#22#0" expanded="true" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+        <state relative-caret-position="300">
+          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -1016,31 +944,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/vue-audio-visual/src/plugin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/webiste/songs/view.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="38" column="63" selection-start-line="38" selection-start-column="63" selection-end-line="38" selection-end-column="63" />
+        <state relative-caret-position="345">
+          <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
           <folding>
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/webiste/cart.vue">
+    <entry file="file://$PROJECT_DIR$/node_modules/vue-audio-visual/src/components/AvCircle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="38" column="61" lean-forward="true" selection-start-line="38" selection-start-column="61" selection-end-line="38" selection-end-column="61" />
+        <state relative-caret-position="138">
+          <caret line="198" column="6" selection-start-line="198" selection-start-column="6" selection-end-line="198" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/vue-audio-visual/src/plugin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="15" column="21" lean-forward="true" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/core/player.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="100" selection-start-line="100" selection-end-line="100" />
           <folding>
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" />
+            <element signature="n#style#0;n#audio#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="e#5293#11484#0" />
+            <element signature="e#5855#9101#0" />
+            <element signature="e#7747#10093#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/site.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="20" lean-forward="true" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
         </state>
       </provider>
     </entry>

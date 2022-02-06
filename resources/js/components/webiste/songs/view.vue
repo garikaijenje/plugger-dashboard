@@ -15,24 +15,13 @@
                     <div class="loader"></div>
                     <div class="dimmer-content">
                         <div class="col-lg-12 row align-items-center p-border-light rounded card-body">
-                            <div class="col-lg-3">
-                                <div v-if="model.song_path">
-                                    <av-circle class="text-center"
-                                            :outline-width="0"
-                                            :progress-width="5"
-                                            :outline-meter-space="5"
-                                            :playtime="true"
-                                            :canv-top="true"
-                                            progress-color="#6200EE"
-                                            bar-color="#6200EE"
-                                            playtime-color="#6200EE"
-                                            playtime-font="18px Monaco"
-                                            :audio-src="model.song_path"
-                                    ></av-circle>
-                                </div>
-                                <div class="mt-3 text-center">
-                                    <img style="max-width: 250px" v-if="model.cover.optimized"  :src="model.cover.medium" alt="">
-                                    <img style="max-width: 250px" v-else :src="model.cover.path" alt="">
+                            <div class="col-lg-3 px-0">
+                                <div v-if="model.song_path" class="p-border-light p-3 rounded">
+                                    <div class="text-center">
+                                        <img style="max-width: 250px" v-if="model.cover.optimized"  :src="model.cover.medium" alt="">
+                                        <img style="max-width: 250px" v-else :src="model.cover.path" alt="">
+                                    </div>
+                                    <player class="mt-3" :id="model.id" :url="model.song_path"></player>
                                 </div>
                             </div>
                             <div class="col-lg-9">
@@ -82,23 +71,24 @@
 
                             </div>
                         </div>
-
-
-
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>
 </template>
 
 <script>
+    import Player from "../../core/player";
     export default {
         name: "dashboard",
+        components: {Player},
         data(){
             return {
+                playbackTime: 0,
+                audioDuration: 100,
+                audioLoaded: false,
+                isPlaying: false,
                 model: {
                     cover : {},
                     province : {},
@@ -131,7 +121,7 @@
                }).finally(() => {
                    this.loading = false;
                });
-           }
+           },
         },
         mounted()
         {
