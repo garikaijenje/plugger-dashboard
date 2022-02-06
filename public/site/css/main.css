@@ -48,7 +48,7 @@ Primary use:	Volna HTML Template
 /*==============================
 	Fonts
 ==============================*/
-/*@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&amp;family=Inter:wght@400;500&amp;display=swap"); TODO : Remove Comment*/
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 /*==============================
 	Common styles
 ==============================*/
@@ -61,7 +61,7 @@ body {
   height: 100%;
 }
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   background-color: #16151a;
   -webkit-font-smoothing: antialiased;
